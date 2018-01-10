@@ -10,10 +10,12 @@ public class EnemyAI : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		target = GameObject.FindGameObjectWithTag ("Player").transform;
 	}
 	
 	// Update is called once per frame
+
+
 	void Update () {
 
 		float distanceToTarget = Vector3.Distance (transform.position, target.position);
