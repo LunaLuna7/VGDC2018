@@ -319,8 +319,8 @@ MonoBehaviour:
   hazard: {fileID: 1302045181672888, guid: 803fb8432bbff7540ba89d72cd727e91, type: 2}
   spawnValues: {x: 7, y: 11, z: 0}
   hazardCount: 1
-  spawnWait: 1
-  startWait: 1
+  spawnWait: 5
+  startWait: 5
   waveWait: 1
 --- !u!4 &983098729
 Transform:
@@ -360,8 +360,8 @@ MonoBehaviour:
   hazard: {fileID: 1302045181672888, guid: 803fb8432bbff7540ba89d72cd727e91, type: 2}
   spawnValues: {x: 7, y: -11, z: 0}
   hazardCount: 1
-  spawnWait: 1
-  startWait: 1
+  spawnWait: 2
+  startWait: 10
   waveWait: 1
 --- !u!114 &983098732
 MonoBehaviour:
@@ -377,8 +377,8 @@ MonoBehaviour:
   hazard: {fileID: 1302045181672888, guid: 803fb8432bbff7540ba89d72cd727e91, type: 2}
   spawnValues: {x: -7.5, y: 9, z: 0}
   hazardCount: 1
-  spawnWait: 1
-  startWait: 1
+  spawnWait: 7
+  startWait: 15
   waveWait: 1
 --- !u!114 &983098733
 MonoBehaviour:
