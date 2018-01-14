@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class coin : MonoBehaviour{
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider other)
     {
-        Debug.Log("hi");
-        Destroy(gameObject);
+        Debug.Log("h");
+        if (other.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
     }
 
 }
