@@ -4,14 +4,22 @@ using UnityEngine;
 
 public class coin : MonoBehaviour{
 
-    void OnTriggerEnter(Collider other)
+    void Start()
     {
-        Debug.Log("h");
-        if (other.tag == "Player")
+        DestroyObjectDelayed();
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
         }
     }
 
+    void DestroyObjectDelayed()
+    {
+        Destroy(gameObject, 5);
+    }
 }
 
