@@ -1,17 +1,13 @@
 fileFormatVersion: 2
-guid: 7ae26cb52202205469b85331938b3c01
-timeCreated: 1514271942
+guid: 35dca3cec416cec4da3d0b631419cbec
+timeCreated: 1516170267
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: WW School Girl Idle Animation_0
-    21300002: WW School Girl Idle Animation_1
-    21300004: WW School Girl Idle Animation_2
-    21300006: WW School Girl Idle Animation_3
-    21300008: WW School Girl Idle Animation_4
-    21300010: WW School Girl Idle Animation_5
-    21300012: WW School Girl Idle Animation_6
-    21300014: WW School Girl Idle Animation_7
+    21300000: VGDC_2016_Waifu_2_Idle_Animation_0
+    21300002: VGDC_2016_Waifu_2_Idle_Animation_1
+    21300004: VGDC_2016_Waifu_2_Idle_Animation_2
+    21300006: VGDC_2016_Waifu_2_Idle_Animation_3
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -94,37 +90,17 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WW School Girl Idle Animation_0
+      name: VGDC_2016_Waifu_2_Idle_Animation_0
       rect:
         serializedVersion: 2
-        x: 18
-        y: 167
-        width: 401
-        height: 653
+        x: 6
+        y: 51
+        width: 212
+        height: 361
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,13 +108,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: WW School Girl Idle Animation_1
+      name: VGDC_2016_Waifu_2_Idle_Animation_1
       rect:
         serializedVersion: 2
-        x: 478
-        y: 167
-        width: 365
-        height: 651
+        x: 241
+        y: 51
+        width: 199
+        height: 363
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -146,13 +122,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: WW School Girl Idle Animation_2
+      name: VGDC_2016_Waifu_2_Idle_Animation_2
       rect:
         serializedVersion: 2
-        x: 924
-        y: 170
-        width: 358
-        height: 651
+        x: 470
+        y: 49
+        width: 211
+        height: 362
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,69 +136,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: WW School Girl Idle Animation_3
+      name: VGDC_2016_Waifu_2_Idle_Animation_3
       rect:
         serializedVersion: 2
-        x: 1382
-        y: 174
-        width: 365
-        height: 651
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: WW School Girl Idle Animation_4
-      rect:
-        serializedVersion: 2
-        x: 1818
-        y: 170
-        width: 399
-        height: 653
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: WW School Girl Idle Animation_5
-      rect:
-        serializedVersion: 2
-        x: 2269
-        y: 174
-        width: 365
-        height: 651
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: WW School Girl Idle Animation_6
-      rect:
-        serializedVersion: 2
-        x: 2684
-        y: 174
-        width: 358
-        height: 652
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: WW School Girl Idle Animation_7
-      rect:
-        serializedVersion: 2
-        x: 3105
-        y: 174
-        width: 365
-        height: 652
+        x: 720
+        y: 49
+        width: 199
+        height: 364
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
