@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class coin : MonoBehaviour{
+public class Item_Icon : MonoBehaviour {
 
     void Start()
     {
@@ -14,6 +14,7 @@ public class coin : MonoBehaviour{
         if (other.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
+
         }
     }
 
@@ -22,4 +23,3 @@ public class coin : MonoBehaviour{
         Destroy(gameObject, 5);
     }
 }
-
