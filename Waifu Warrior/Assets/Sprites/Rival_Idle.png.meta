@@ -1,14 +1,13 @@
 fileFormatVersion: 2
-guid: 12c59c5e65976a847a89bd1a0f2d56a1
-timeCreated: 1516177057
+guid: bc32d38d568dc334786f043cf1ce9f3e
+timeCreated: 1516320137
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: rival_animation_0
-    21300002: rival_animation_1
-    21300004: rival_animation_2
-    21300006: rival_animation_3
-    21300008: rival_animation_4
+    21300000: Rival_Idle_0
+    21300002: Rival_Idle_2
+    21300004: Rival_Idle_4
+    21300006: Rival_Idle_6
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -91,61 +90,71 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: rival_animation_0
+      name: Rival_Idle_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 48
-        width: 209
-        height: 365
+        x: 21
+        y: 108
+        width: 446
+        height: 809
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: rival_animation_2
+      name: Rival_Idle_2
       rect:
         serializedVersion: 2
-        x: 245
-        y: 49
-        width: 199
-        height: 366
+        x: 529
+        y: 105
+        width: 422
+        height: 809
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: rival_animation_3
+      name: Rival_Idle_4
       rect:
         serializedVersion: 2
-        x: 474
-        y: 49
-        width: 208
-        height: 366
+        x: 1021
+        y: 103
+        width: 444
+        height: 809
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: rival_animation_4
+      name: Rival_Idle_6
       rect:
         serializedVersion: 2
-        x: 722
-        y: 50
-        width: 199
-        height: 366
+        x: 1549
+        y: 105
+        width: 422
+        height: 809
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
