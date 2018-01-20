@@ -18,7 +18,8 @@ public class EnemyAI : MonoBehaviour {
 
 	void Update () {
 
-		float distanceToTarget = Vector3.Distance (transform.position, target.position);
+        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+		/*float distanceToTarget = Vector3.Distance (transform.position, target.position);
 		if (distanceToTarget < chaseRange) {
 			Vector3 targetDir = target.position - transform.position;
 			float angle = Mathf.Atan2 (targetDir.y, targetDir.x) * Mathf.Rad2Deg - 90f;
@@ -26,7 +27,7 @@ public class EnemyAI : MonoBehaviour {
 			transform.rotation = Quaternion.RotateTowards(transform.rotation, q, 180);
 
 			transform.Translate (Vector3.up * Time.deltaTime * speed);
-		}
+		}*/
 	}
 
 	void OnMouseDown(){

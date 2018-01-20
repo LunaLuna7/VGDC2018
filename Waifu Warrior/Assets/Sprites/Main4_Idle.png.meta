@@ -1,17 +1,14 @@
 fileFormatVersion: 2
-guid: a824f8711e3852b42983f538ec50d201
-timeCreated: 1510997614
+guid: 0dd49e23b40b84345baa05fabf446e62
+timeCreated: 1516435536
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: chibi_0
-    21300002: chibi_1
-    21300004: chibi_2
-    21300006: chibi_3
-    21300008: chibi_4
-    21300010: chibi_5
-    21300012: chibi_6
-    21300014: chibi_7
+    21300000: Main4_Idle_0
+    21300002: Main4_Idle_1
+    21300004: Main4_Idle_2
+    21300006: Main4_Idle_3
+  externalObjects: {}
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -20,6 +17,8 @@ TextureImporter:
     linearTexture: 0
     fadeOut: 0
     borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
     mipMapFadeDistanceStart: 1
     mipMapFadeDistanceEnd: 3
   bumpmap:
@@ -35,10 +34,13 @@ TextureImporter:
   textureFormat: 1
   maxTextureSize: 2048
   textureSettings:
+    serializedVersion: 2
     filterMode: -1
     aniso: -1
     mipBias: -1
-    wrapMode: 1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -60,152 +62,105 @@ TextureImporter:
   platformSettings:
   - buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
+    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    androidETC2FallbackOverride: 0
   - buildTarget: Standalone
     maxTextureSize: 2048
+    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    androidETC2FallbackOverride: 0
   - buildTarget: iPhone
     maxTextureSize: 2048
+    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    androidETC2FallbackOverride: 0
   - buildTarget: Android
     maxTextureSize: 2048
+    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-  - buildTarget: WebGL
-    maxTextureSize: 2048
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: chibi_0
+      name: Main4_Idle_0
       rect:
         serializedVersion: 2
-        x: 154
-        y: 26
-        width: 411
-        height: 688
+        x: 52
+        y: 154
+        width: 416
+        height: 784
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: chibi_1
+      name: Main4_Idle_1
       rect:
         serializedVersion: 2
-        x: 635
-        y: 24
-        width: 403
-        height: 695
+        x: 550
+        y: 157
+        width: 416
+        height: 779
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: chibi_2
+      name: Main4_Idle_2
       rect:
         serializedVersion: 2
-        x: 1125
-        y: 24
-        width: 403
-        height: 695
+        x: 1052
+        y: 154
+        width: 419
+        height: 783
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: chibi_3
+      name: Main4_Idle_3
       rect:
         serializedVersion: 2
-        x: 1612
-        y: 21
-        width: 403
-        height: 692
+        x: 1565
+        y: 157
+        width: 416
+        height: 779
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: chibi_4
-      rect:
-        serializedVersion: 2
-        x: 2083
-        y: 25
-        width: 438
-        height: 688
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: chibi_5
-      rect:
-        serializedVersion: 2
-        x: 2556
-        y: 21
-        width: 402
-        height: 692
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: chibi_6
-      rect:
-        serializedVersion: 2
-        x: 3061
-        y: 13
-        width: 403
-        height: 696
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: chibi_7
-      rect:
-        serializedVersion: 2
-        x: 3542
-        y: 11
-        width: 404
-        height: 692
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      physicsShape: []
       tessellationDetail: 0
     outline: []
+    physicsShape: []
   spritePackingTag: 
   userData: 
   assetBundleName: 

@@ -1,14 +1,13 @@
 fileFormatVersion: 2
-guid: c9f76a5c9197d9b49b24b3bd2e45f580
-timeCreated: 1515912181
+guid: bab669e1d0ba005469aa664ea1deae4c
+timeCreated: 1516346643
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: test_0
-    21300002: test_1
-    21300004: test_2
-    21300006: test_3
-    21300008: test_4
+    21300000: Sensei_Idle_0
+    21300002: Sensei_Idle_1
+    21300004: Sensei_Idle_2
+    21300006: Sensei_Idle_3
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -91,17 +90,27 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: test_0
+      name: Sensei_Idle_0
       rect:
         serializedVersion: 2
-        x: 38
-        y: 279
-        width: 170
-        height: 305
+        x: 28
+        y: 128
+        width: 448
+        height: 796
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -109,13 +118,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: test_1
+      name: Sensei_Idle_1
       rect:
         serializedVersion: 2
-        x: 216
-        y: 284
-        width: 171
-        height: 305
+        x: 518
+        y: 128
+        width: 438
+        height: 788
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -123,13 +132,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: test_2
+      name: Sensei_Idle_2
       rect:
         serializedVersion: 2
-        x: 404
-        y: 295
-        width: 172
-        height: 300
+        x: 1015
+        y: 131
+        width: 445
+        height: 796
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,27 +146,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: test_3
+      name: Sensei_Idle_3
       rect:
         serializedVersion: 2
-        x: 583
-        y: 281
-        width: 170
-        height: 305
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: test_4
-      rect:
-        serializedVersion: 2
-        x: 770
-        y: 271
-        width: 170
-        height: 305
+        x: 1527
+        y: 131
+        width: 438
+        height: 788
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

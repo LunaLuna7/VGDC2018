@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: fe3e5cd8a4695ea4b8dc5546da0b75de
-timeCreated: 1516429787
+guid: af6ddf35c3e2ba5459dcc895d07a6681
+timeCreated: 1516431384
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Fan_Idle_0
-    21300002: Fan_Idle_1
-    21300004: Fan_Idle_2
-    21300006: Fan_Idle_3
+    21300000: Main3_Idle_0
+    21300002: Main3_Idle_1
+    21300004: Main3_Idle_2
+    21300006: Main3_Idle_3
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -104,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Fan_Idle_0
+      name: Main3_Idle_0
       rect:
         serializedVersion: 2
-        x: 18
-        y: 146
-        width: 456
-        height: 786
+        x: 19
+        y: 170
+        width: 447
+        height: 785
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,13 +118,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Fan_Idle_1
+      name: Main3_Idle_1
       rect:
         serializedVersion: 2
-        x: 530
-        y: 151
-        width: 420
-        height: 793
+        x: 504
+        y: 175
+        width: 440
+        height: 779
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,13 +132,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Fan_Idle_2
+      name: Main3_Idle_2
       rect:
         serializedVersion: 2
-        x: 983
-        y: 149
-        width: 471
-        height: 799
+        x: 1017
+        y: 168
+        width: 453
+        height: 787
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -146,13 +146,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Fan_Idle_3
+      name: Main3_Idle_3
       rect:
         serializedVersion: 2
-        x: 1505
-        y: 151
-        width: 492
-        height: 793
+        x: 1534
+        y: 172
+        width: 438
+        height: 780
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
