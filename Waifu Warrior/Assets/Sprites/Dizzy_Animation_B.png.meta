@@ -1,0 +1,482 @@
+fileFormatVersion: 2
+guid: c75e493cb1d6deb48b5d8936e806618b
+timeCreated: 1516528773
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Dizzy_Animation_B_0
+    21300002: Dizzy_Animation_B_1
+    21300004: Dizzy_Animation_B_2
+    21300006: Dizzy_Animation_B_3
+    21300008: Dizzy_Animation_B_4
+    21300010: Dizzy_Animation_B_5
+    21300012: Dizzy_Animation_B_6
+    21300014: Dizzy_Animation_B_7
+    21300016: Dizzy_Animation_B_8
+    21300018: Dizzy_Animation_B_9
+    21300020: Dizzy_Animation_B_10
+    21300022: Dizzy_Animation_B_11
+    21300024: Dizzy_Animation_B_12
+    21300026: Dizzy_Animation_B_13
+    21300028: Dizzy_Animation_B_14
+    21300030: Dizzy_Animation_B_15
+    21300032: Dizzy_Animation_B_16
+    21300034: Dizzy_Animation_B_17
+    21300036: Dizzy_Animation_B_18
+    21300038: Dizzy_Animation_B_19
+    21300040: Dizzy_Animation_B_20
+    21300042: Dizzy_Animation_B_21
+    21300044: Dizzy_Animation_B_22
+    21300046: Dizzy_Animation_B_23
+    21300048: Dizzy_Animation_B_24
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Dizzy_Animation_B_0
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 2680
+        width: 310
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dizzy_Animation_B_1
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 2686
+        width: 574
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dizzy_Animation_B_2
+      rect:
+        serializedVersion: 2
+        x: 1171
+        y: 2617
+        width: 548
+        height: 350
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dizzy_Animation_B_3
+      rect:
+        serializedVersion: 2
+        x: 1776
+        y: 2598
+        width: 530
+        height: 381
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dizzy_Animation_B_4
+      rect:
+        serializedVersion: 2
+        x: 2391
+        y: 2611
+        width: 529
+        height: 369
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dizzy_Animation_B_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2270
+        width: 566
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dizzy_Animation_B_6
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 2302
+        width: 559
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dizzy_Animation_B_7
+      rect:
+        serializedVersion: 2
+        x: 1214
+        y: 2215
+        width: 544
+        height: 352
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dizzy_Animation_B_8
+      rect:
+        serializedVersion: 2
+        x: 1842
+        y: 2194
+        width: 523
+        height: 380
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dizzy_Animation_B_9
+      rect:
+        serializedVersion: 2
+        x: 2413
+        y: 2208
+        width: 522
+        height: 371
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dizzy_Animation_B_10
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 1858
+        width: 533
+        height: 321
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dizzy_Animation_B_11
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 1883
+        width: 561
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dizzy_Animation_B_12
+      rect:
+        serializedVersion: 2
+        x: 1263
+        y: 1794
+        width: 548
+        height: 351
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dizzy_Animation_B_13
+      rect:
+        serializedVersion: 2
+        x: 1892
+        y: 1750
+        width: 529
+        height: 381
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dizzy_Animation_B_14
+      rect:
+        serializedVersion: 2
+        x: 2457
+        y: 1775
+        width: 529
+        height: 369
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dizzy_Animation_B_15
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 1473
+        width: 575
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dizzy_Animation_B_16
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 1506
+        width: 559
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dizzy_Animation_B_17
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1410
+        width: 544
+        height: 350
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dizzy_Animation_B_18
+      rect:
+        serializedVersion: 2
+        x: 1893
+        y: 1362
+        width: 523
+        height: 380
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dizzy_Animation_B_19
+      rect:
+        serializedVersion: 2
+        x: 2440
+        y: 1378
+        width: 521
+        height: 370
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dizzy_Animation_B_20
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 1058
+        width: 532
+        height: 321
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dizzy_Animation_B_21
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 1091
+        width: 561
+        height: 269
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dizzy_Animation_B_22
+      rect:
+        serializedVersion: 2
+        x: 1278
+        y: 1016
+        width: 548
+        height: 351
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dizzy_Animation_B_23
+      rect:
+        serializedVersion: 2
+        x: 1842
+        y: 960
+        width: 533
+        height: 381
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dizzy_Animation_B_24
+      rect:
+        serializedVersion: 2
+        x: 2427
+        y: 970
+        width: 525
+        height: 370
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
