@@ -14,7 +14,11 @@ public class timer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+
+
         StartTime = Time.time;
+        
         highscore.text = PlayerPrefs.GetFloat("Highscore").ToString("f2");
         gamescore.text = PlayerPrefs.GetFloat("Gamescore").ToString("f2");
 	}
@@ -28,6 +32,7 @@ public class timer : MonoBehaviour {
         string minutes = ((int) t / 60).ToString();
         string seconds = (t % 60).ToString("f2");
         timerText.text = minutes + ':' + seconds;
+ 
 
         if (t > PlayerPrefs.GetFloat("Highscore", 0))
         {

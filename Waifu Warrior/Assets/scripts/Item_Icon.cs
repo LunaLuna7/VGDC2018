@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class Item_Icon : MonoBehaviour {
 
+    private Gold_Counter GoldAmount;
+
+
+    
+
     void Start()
     {
+        GoldAmount = GameObject.FindGameObjectWithTag("Gold").GetComponent<Gold_Counter>();
+
         DestroyObjectDelayed();
     }
 
@@ -13,6 +20,7 @@ public class Item_Icon : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            GoldAmount.gold += 1;
             Destroy(gameObject);
 
         }
