@@ -338,6 +338,7 @@ MonoBehaviour:
   target: {fileID: 0}
   speed: 2
   chaseRange: 20
+  health: 1
 --- !u!212 &212760684555858992
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -7,6 +7,7 @@ public class EnemyAI : MonoBehaviour {
 	public Transform target;
 	public float speed;
 	public float chaseRange;
+    public int health;
 
 	// Use this for initialization
 	void Start () {
@@ -31,7 +32,13 @@ public class EnemyAI : MonoBehaviour {
 	}
 
 	void OnMouseDown(){
-		Destroy (gameObject);
+
+        health = health - 1;
+
+        if(health == 0) 
+        {
+            Destroy(gameObject);
+        }
 	}
 
 }
