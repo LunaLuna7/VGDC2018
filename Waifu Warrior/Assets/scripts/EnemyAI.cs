@@ -35,7 +35,7 @@ public class EnemyAI : MonoBehaviour {
 
         health = health - 1;
 
-        if(health == 0) 
+        if(health <= 0) 
         {
             Destroy(gameObject);
         }

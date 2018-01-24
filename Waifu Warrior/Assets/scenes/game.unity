@@ -238,6 +238,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &159392671 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1699023488849936, guid: 5ab3cb50f17410143a4857b9c65d57c6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1844445079}
+--- !u!50 &159392677
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 159392671}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &180146045
 GameObject:
   m_ObjectHideFlags: 0
@@ -2246,9 +2271,9 @@ GameObject:
   - component: {fileID: 1314014492}
   - component: {fileID: 1314014491}
   - component: {fileID: 1314014490}
-  - component: {fileID: 1314014494}
   - component: {fileID: 1314014493}
   - component: {fileID: 1314014495}
+  - component: {fileID: 1314014494}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2447,11 +2472,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1314014489}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6389ac617082c4a41a368a7fe0a1f597, type: 3}
+  m_Script: {fileID: 11500000, guid: ddf9323ab972696419705910f151e33c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!58 &1314014495
-CircleCollider2D:
+  Health: 10
+--- !u!70 &1314014495
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -2463,8 +2489,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 2.2
+  m_Size: {x: 2.38, y: 4.27}
+  m_Direction: 0
 --- !u!1001 &1398425605
 Prefab:
   m_ObjectHideFlags: 0
@@ -3272,6 +3298,11 @@ Prefab:
     - target: {fileID: 1699023488849936, guid: 5ab3cb50f17410143a4857b9c65d57c6, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 60228128003449938, guid: 5ab3cb50f17410143a4857b9c65d57c6,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5ab3cb50f17410143a4857b9c65d57c6, type: 2}
