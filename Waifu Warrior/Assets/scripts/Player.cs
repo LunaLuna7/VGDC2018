@@ -6,7 +6,7 @@ public class Player : MonoBehaviour {
 
     [SerializeField]
     private int Health;
-
+    public bool immune = false;
 
     void OnMouseDrag()
     {
@@ -17,7 +17,7 @@ public class Player : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (!immune && collision.gameObject.CompareTag("Enemy"))
         {
             Health -= 1;
             if (Health <= 0)
