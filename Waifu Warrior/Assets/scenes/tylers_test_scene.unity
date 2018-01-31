@@ -267,7 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3b2963bcf4652b41a81139bc1a6418a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hazard: {fileID: 1882178131937904, guid: 8a7f3bbed322362468ab96bbb71262be, type: 2}
+  hazard: {fileID: 1699023488849936, guid: 5ab3cb50f17410143a4857b9c65d57c6, type: 2}
   hazardCount: 4
   spawnWait: 1
   startWait: 1
@@ -2549,6 +2549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 10
+  immune: 0
 --- !u!70 &1314014495
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2558,7 +2559,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
