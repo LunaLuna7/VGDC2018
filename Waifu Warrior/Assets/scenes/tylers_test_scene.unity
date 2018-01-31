@@ -267,10 +267,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3b2963bcf4652b41a81139bc1a6418a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hazard: {fileID: 1699023488849936, guid: 5ab3cb50f17410143a4857b9c65d57c6, type: 2}
+  hazard: {fileID: 1882178131937904, guid: 8a7f3bbed322362468ab96bbb71262be, type: 2}
   hazardCount: 4
-  spawnWait: 5
-  startWait: 5
+  spawnWait: 1
+  startWait: 1
   waveWait: 3
   topLeftSpawnPoint: {x: -7.5, y: 11}
   bottomRightSpawnPoint: {x: 7.5, y: -11}
@@ -2435,7 +2435,7 @@ PolygonCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1314014489}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -2562,7 +2562,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 2.38, y: 4.27}
+  m_Size: {x: 1.5, y: 3}
   m_Direction: 0
 --- !u!1001 &1398425605
 Prefab:
@@ -3467,6 +3467,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2649d3cbad9f8407a8c29f2d88a46063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnableObjects:
+  - {fileID: 1207562739586184, guid: 83bba2ecaa8eab147baa3e323bc6a702, type: 2}
 --- !u!114 &2121730948
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,13 +6,17 @@ public class MasterTesting : MonoBehaviour {
 
 	GameObject player;
 
+    void Start() {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+
 	void Update () {
 		Commands();
 	}
 
 	void Commands(){
 		if(Input.GetKeyDown(KeyCode.Alpha1)){
-			ObjectSpawner.SpawnObjectWithParent(Spawnable.Bubble, player);
+			ObjectSpawner.instance.SpawnObjectWithParent(Spawnable.Bubble, player);
 		}
 	}
 }

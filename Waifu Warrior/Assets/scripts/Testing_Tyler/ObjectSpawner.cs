@@ -3,18 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ObjectSpawner : MonoBehaviour {
+    public static ObjectSpawner instance;
 
-	public static GameObject[] spawnableObjects;
+    public GameObject[] spawnableObjects;
 
-	void Start(){
-		spawnableObjects = ObjectList.instance.GetList ();
+	void Awake(){
+        instance = this;
 	}
 
-	public static void SpawnObjectWithParent(Spawnable obj, GameObject parent){
+	public void SpawnObjectWithParent(Spawnable obj, GameObject parent){
 		SpawnObjectWithParent (obj, parent, Vector2.zero);
 	}
-	public static void SpawnObjectWithParent(Spawnable obj, GameObject parent, Vector2 localPosition){
-		Instantiate (spawnableObjects [(int)obj], (Vector3)localPosition, Quaternion.identity, parent.transform);
+	public void SpawnObjectWithParent(Spawnable obj, GameObject parent, Vector2 localPosition){
+		GameObject temp = Instantiate (spawnableObjects [(int)obj], Vector2.zero, Quaternion.identity, parent.transform);
+        temp.transform.localPosition = localPosition;
 	}
 }
 

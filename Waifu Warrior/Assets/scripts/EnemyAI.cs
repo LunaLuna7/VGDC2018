@@ -8,18 +8,22 @@ public class EnemyAI : MonoBehaviour {
 	public float speed;
 	public float chaseRange;
     public int health;
+    Rigidbody2D rgbd;
 
 	// Use this for initialization
 	void Start () {
 		target = GameObject.FindGameObjectWithTag ("Player").transform;
+        rgbd = gameObject.GetComponent<Rigidbody2D>();
 	}
-	
-	// Update is called once per frame
 
+    // Update is called once per frame
+    void FixedUpdate() {
+        Move();
+    }
 
 	void Update () {
 
-        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+        //transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
 		/*float distanceToTarget = Vector3.Distance (transform.position, target.position);
 		if (distanceToTarget < chaseRange) {
 			Vector3 targetDir = target.position - transform.position;
@@ -41,4 +45,7 @@ public class EnemyAI : MonoBehaviour {
         }
 	}
 
+    void Move() {
+        rgbd.MovePosition(Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime));
+    }
 }
