@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 60280059576775778}
   - component: {fileID: 114998004629906744}
   - component: {fileID: 50831992436606812}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Senpai
   m_TagString: Enemy
   m_Icon: {fileID: 0}
