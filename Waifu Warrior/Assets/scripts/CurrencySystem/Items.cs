@@ -10,8 +10,9 @@ public class Items{
     public string ItemName;
     public int ItemID;
 
-    public Sprite unboughtSprite;
-    public Sprite boughtSprite;
+    public string SpriteName;
+    //public string boughtSpriteName;
+
 
     public int ItemPrice;
 

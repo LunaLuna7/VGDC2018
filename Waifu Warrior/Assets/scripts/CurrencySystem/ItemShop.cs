@@ -8,6 +8,10 @@ public class ItemShop : MonoBehaviour {
 
     public List<Items> itemList = new List<Items>(); //Creates a Dynamic list that you can resize and add items of type Items script
 
+    private List<GameObject> ItemHolderList = new List<GameObject>(); //the list if item images in the item list.
+
+    private List<GameObject> buyButtonList = new List<GameObject>(); //The list  of buy buttons in the item list
+
     public GameObject ItemHolderPrefab; //Where the Item holder object goes
     public Transform grid;
 
@@ -28,17 +32,55 @@ public class ItemShop : MonoBehaviour {
             holderScript.itemPrice.text = "$ " + itemList[i].ItemPrice.ToString();
             holderScript.itemID = itemList[i].ItemID;
 
+
+            //the buy button
             holderScript.buyButton.GetComponent<BuyButton>().itemID = itemList[i].ItemID;
 
+            //The list to update the sprite
+            ItemHolderList.Add(holder);
+            buyButtonList.Add(holderScript.buyButton); //keeps track of whihc button.
+
             if (itemList[i].bought == true)
-            {
-                holderScript.itemImage.sprite = itemList[i].boughtSprite;
+            {                                                               //v----the sub directory.
+                holderScript.itemImage.sprite = Resources.Load<Sprite>("Sprites/" + itemList[i].SpriteName); //Goes to the Resources directory to grab the right sprites.
             }
             else
             {
-                holderScript.itemImage.sprite = itemList[i].unboughtSprite;
-
+                holderScript.itemImage.sprite = Resources.Load<Sprite>("Sprites/" + "Lock" + itemList[i].SpriteName); //I manually change the sprite we getting by adding "Lock" to name
+                                                                                                                        //Since all my locked versions are same name but Locked at start of string
+                                                                                                                        //ex: Clock and LockClock
             }
         }
     }
+
+    public void UpdateSprite(int currentItemID)
+    {
+        for (int i = 0; i < ItemHolderList.Count; i++)
+        {
+            ItemHolder holderScript = ItemHolderList[i].GetComponent<ItemHolder>();
+            if (holderScript.itemID == currentItemID)
+            {
+                for (int j = 0; j < itemList.Count; j++)
+                {
+                    if (itemList[j].ItemID == currentItemID)
+                    {
+                        if (itemList[j].bought == true)
+                        {                                                               
+                            holderScript.itemImage.sprite = Resources.Load<Sprite>("Sprites/" + itemList[i].SpriteName);
+                            holderScript.itemPrice.text = ""; //After bought change string to empty.
+                        }
+                        else
+                        {
+                            holderScript.itemImage.sprite = Resources.Load<Sprite>("Sprites/" + "Lock" + itemList[i].SpriteName);
+                                                                                                                                                                                                                                                                    
+                        }
+                    }
+                }
+            }
+
+        }
+    }
 }
+
+
+
