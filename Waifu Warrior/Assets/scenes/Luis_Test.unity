@@ -230,7 +230,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &109330579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1775,7 +1775,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &836458518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2056,7 +2056,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &983098727
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2187,15 +2187,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1042487987}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1801deec2ebeea64d82a19ec80c7babb, type: 3}
+  m_Script: {fileID: 11500000, guid: f3b2963bcf4652b41a81139bc1a6418a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hazard: {fileID: 1699023488849936, guid: 5ab3cb50f17410143a4857b9c65d57c6, type: 2}
-  spawnValues: {x: 7, y: 11, z: 0}
-  hazardCount: 5
+  hazard: {fileID: 1712892780567982, guid: ce5aeea2945b54b47b0aadc2e71948f5, type: 2}
+  hazardCount: 4
   spawnWait: 1
-  startWait: 2
+  startWait: 1
   waveWait: 1
+  topLeftSpawnPoint: {x: 0, y: 0}
+  bottomRightSpawnPoint: {x: 0, y: 0}
+  zSpawnPoint: 0
 --- !u!114 &1042487993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2617,7 +2619,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &1314014490
 Animator:
   serializedVersion: 3
@@ -3003,7 +3005,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1601601012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3664,7 +3666,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1031611656215638, guid: 57a9b27f6acc3124ea612358dc8823b6, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 57a9b27f6acc3124ea612358dc8823b6, type: 2}
