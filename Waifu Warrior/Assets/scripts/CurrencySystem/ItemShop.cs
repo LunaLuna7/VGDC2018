@@ -29,7 +29,7 @@ public class ItemShop : MonoBehaviour {
             ItemHolder holderScript = holder.GetComponent<ItemHolder>(); //Gain acces to the stuff in ItemHolder(the individual info of each item).
 
             holderScript.itemName.text = itemList[i].ItemName;
-            holderScript.itemPrice.text = "$ " + itemList[i].ItemPrice.ToString();
+            holderScript.itemPrice.text = itemList[i].ItemPrice.ToString();
             holderScript.itemID = itemList[i].ItemID;
 
 
