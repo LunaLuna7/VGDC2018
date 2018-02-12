@@ -5,14 +5,14 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour {
 
-    private int maxHeartAmount = 10;
+    private int maxHeartAmount = 3;
     public int startHearts = 3;
     public int curHealth;
     private int maxHealth;
     private int healthPerHeart =2;
 
-    public Image[] healthImages;
-    public Sprite[] healthSprites;
+    public Image[] healthImages;   //The pictures we acces
+    public Sprite[] healthSprites; //the different states of an individual heart (full, mid, empty)
 	// Use this for initialization
 	void Start () {
         curHealth = startHearts * healthPerHeart;
