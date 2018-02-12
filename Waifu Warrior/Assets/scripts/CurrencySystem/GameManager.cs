@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour {
 	void Start ()
     {
         gameManager = this;
+        //Money = Bank.BankCoins;
         UpdateUI();
 	}
 	
@@ -44,6 +45,6 @@ public class GameManager : MonoBehaviour {
 
     void UpdateUI()
     {
-        moneyText.text = "$ " + Money.ToString();
+        moneyText.text = Money.ToString();
     }
 }

@@ -7,6 +7,8 @@ public class BuyButton : MonoBehaviour {
 
     public int itemID;
 
+    public GameObject NotEnoughGoldWindow;
+
     public TMP_Text buttonText;
 
     public void BuyItem() //On click event
@@ -31,6 +33,7 @@ public class BuyButton : MonoBehaviour {
             //if they do not have enough gold.
             else if (ItemShop.itemShop.itemList[i].ItemID == itemID && !ItemShop.itemShop.itemList[i].bought && !GameManager.gameManager.CheckMoney(ItemShop.itemShop.itemList[i].ItemPrice))
             {
+                NotEnoughGoldWindow.SetActive(true);
                 Debug.Log("NO Enough money");
             }
 

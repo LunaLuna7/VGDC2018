@@ -23,3 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/scenes/game.unity
     guid: 24b4ca65806789948afc4da6db9f3c16
+  - enabled: 1
+    path: Assets/scenes/Luis_Test.unity
+    guid: ba42fb503ca790b44a8893a62084bb2b
