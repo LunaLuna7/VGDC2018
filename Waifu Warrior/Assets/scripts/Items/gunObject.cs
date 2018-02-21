@@ -19,7 +19,7 @@ public class gunObject : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            FindObjectOfType<AudioManager>().Play("Explosion");
+            
             Instantiate(Itemgone, transform.position, transform.rotation);
             Instantiate(crosshair, transform.position, transform.rotation);
 

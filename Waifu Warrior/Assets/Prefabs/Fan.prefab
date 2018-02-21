@@ -287,7 +287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hit: {fileID: 100000, guid: f06e78284f831ae469c74624ab5d513b, type: 2}
   target: {fileID: 0}
-  speed: 2
+  speed: 3
   chaseRange: 0
   health: 1
 --- !u!212 &212679400720363448
