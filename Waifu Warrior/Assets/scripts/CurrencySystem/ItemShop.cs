@@ -24,7 +24,6 @@ public class ItemShop : MonoBehaviour {
     void FillList() //Instantiates an itemholder object into the grid in the UI
     {
 		int[] loadData = PersistentDataManager.GetItemAmounts ();
-		Debug.Log ("LoadData: " + loadData.Length);
         for (int i = 0; i < itemList.Count; i++)
         {
             GameObject holder = Instantiate(ItemHolderPrefab, grid, false);
