@@ -23,6 +23,8 @@ public class ItemShop : MonoBehaviour {
 
     void FillList() //Instantiates an itemholder object into the grid in the UI
     {
+		int[] loadData = PersistentDataManager.GetItemAmounts ();
+		Debug.Log ("LoadData: " + loadData.Length);
         for (int i = 0; i < itemList.Count; i++)
         {
             GameObject holder = Instantiate(ItemHolderPrefab, grid, false);
@@ -32,7 +34,6 @@ public class ItemShop : MonoBehaviour {
             holderScript.itemPrice.text = itemList[i].ItemPrice.ToString();
             holderScript.itemID = itemList[i].ItemID;
 
-
             //the buy button
             holderScript.buyButton.GetComponent<BuyButton>().itemID = itemList[i].ItemID;
 
@@ -40,7 +41,8 @@ public class ItemShop : MonoBehaviour {
             ItemHolderList.Add(holder);
             buyButtonList.Add(holderScript.buyButton); //keeps track of whihc button.
 
-            if (itemList[i].bought == true)
+			itemList [i].bought = loadData [i]>0?true:false;
+			if (itemList[i].bought == true)
             {                                                               //v----the sub directory.
                 holderScript.itemImage.sprite = Resources.Load<Sprite>("Sprites/" + itemList[i].SpriteName); //Goes to the Resources directory to grab the right sprites.
             }
