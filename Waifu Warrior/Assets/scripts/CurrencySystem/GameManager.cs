@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour {
 
 	void Start(){
 		//Money = Bank.BankCoins;
+		PersistentDataManager.LoadData();
 		UpdateUI();
 	}
 	
@@ -58,5 +59,13 @@ public class GameManager : MonoBehaviour {
 
 	public int GetMoney(){
 		return Money;
+	}
+
+	void OnApplicationQuit(){
+		PersistentDataManager.SaveData ();
+	}
+
+	void OnDestroy(){
+		PersistentDataManager.SaveData ();
 	}
 }
