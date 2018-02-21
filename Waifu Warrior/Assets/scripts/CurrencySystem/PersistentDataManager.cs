@@ -16,8 +16,8 @@ public static class PersistentDataManager {
 	}
 
 	public static void SaveData(){
-		CreateFile ();
 		try{
+			CreateFile ();
 			string writeData = GetData();
 			StreamWriter sr = new StreamWriter(Application.persistentDataPath + "/PlayerData.txt");
 			sr.WriteLine(writeData);
@@ -29,15 +29,19 @@ public static class PersistentDataManager {
 	}
 
 	public static void LoadData(){
-		CreateFile ();
-		StreamReader reader = new StreamReader(Application.persistentDataPath + "/PlayerData.txt", Encoding.Default);
-		string rawData = reader.ReadLine();
-		string[] splitData = rawData.Split(',');
-		reader.Close();
+		try{
+			CreateFile ();
+			StreamReader reader = new StreamReader(Application.persistentDataPath + "/PlayerData.txt", Encoding.Default);
+			string rawData = reader.ReadLine();
+			string[] splitData = rawData.Split(',');
+			reader.Close();
 
-		//Save data to variables.
-		GameManager.gameManager.SetMoney(Convert.ToInt32(splitData[(int)Data.money]));
-		Debug.Log ("Money loaded: " + Convert.ToInt32(splitData[(int)Data.money]));
+			//Save data to variables.
+			GameManager.gameManager.SetMoney(Convert.ToInt32(splitData[(int)Data.money]));
+		}
+		catch(Exception e){
+			Debug.Log ("Load failed. " + e);
+		}
 	}
 
 	public static void LoadItemData(){
@@ -65,7 +69,6 @@ public static class PersistentDataManager {
 		for (int i = (int)Data.itemStartIndex; i < (int)Data.itemEndIndex; i++) {
 			toReturn += ',' + splitData [i];
 		}
-		Debug.Log ("GetItemData(): " + toReturn);
 		return toReturn;
 	}
 
@@ -75,7 +78,6 @@ public static class PersistentDataManager {
 		string rawData = reader.ReadLine();
 		string[] splitData = rawData.Split(',');
 		reader.Close();
-		Debug.Log ("RawData: " + rawData);
 		int[] toReturn = new int[(int)Data.itemEndIndex - (int)Data.itemStartIndex];
 
 		for (int i = (int)Data.itemStartIndex; i < (int)Data.itemEndIndex; i++) {
@@ -89,8 +91,10 @@ public static class PersistentDataManager {
 
 		string toReturn = "";
 
+		//Save money
 		toReturn += GameManager.gameManager.GetMoney ().ToString ();
-		//toReturn += {item data here};
+
+		//Save items
 		if (ItemShop.itemShop != null) {
 			for (int i = 0; i < ItemShop.itemShop.itemList.Count; i++) {
 				toReturn += ',' + (ItemShop.itemShop.itemList [i].bought ? "1" : "0");
@@ -98,9 +102,7 @@ public static class PersistentDataManager {
 		} else {
 			toReturn += GetItemData ();
 		}
-
-		Debug.Log ("GetData(): " + toReturn);
-
+			
 		return toReturn;
 	}
 
