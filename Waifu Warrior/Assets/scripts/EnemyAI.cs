@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour {
 
+    public GameObject hit;
 	public Transform target;
 	public float speed;
 	public float chaseRange;
     public int health;
     Rigidbody2D rgbd;
-
+ 
 	// Use this for initialization
 	void Start () {
 		target = GameObject.FindGameObjectWithTag ("Player").transform;
@@ -19,6 +20,7 @@ public class EnemyAI : MonoBehaviour {
     // Update is called once per frame
     void FixedUpdate() {
         Move();
+        
     }
 
 	void Update () {
@@ -38,7 +40,7 @@ public class EnemyAI : MonoBehaviour {
 	void OnMouseDown(){
 
         health = health - 1;
-
+        Instantiate(hit, transform.position, transform.rotation);
         if(health <= 0) 
         {
             Destroy(gameObject);
