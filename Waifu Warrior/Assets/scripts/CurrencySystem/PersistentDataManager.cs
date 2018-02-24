@@ -6,6 +6,8 @@ using System.Text;
 using System;
 
 public static class PersistentDataManager {
+	public static int[] itemAmounts = new int[Data.itemEndIndex - Data.itemStartIndex];
+
 	static void CreateFile(){
 		if (!File.Exists(Application.persistentDataPath + "/PlayerData.txt"))
 		{
@@ -38,6 +40,9 @@ public static class PersistentDataManager {
 
 			//Save data to variables.
 			GameManager.gameManager.SetMoney(Convert.ToInt32(splitData[(int)Data.money]));
+			for(int i = (int)Data.itemStartIndex; i < (int)Data.itemEndIndex; i++){
+				itemAmounts[i - (int)Data.itemStartIndex] = splitData[i];
+			}
 		}
 		catch(Exception e){
 			Debug.Log ("Load failed. " + e);
