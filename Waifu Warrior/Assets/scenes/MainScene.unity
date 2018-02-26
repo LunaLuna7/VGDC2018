@@ -168,7 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item_text: {fileID: 807342011}
   item_button: {fileID: 17792499}
-  amount: 5
+  index: 0
 --- !u!114 &17792499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -396,7 +396,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item_text: {fileID: 1046634698}
   item_button: {fileID: 131304294}
-  amount: 5
+  index: 3
 --- !u!114 &131304294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2813,7 +2813,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 6.700012, y: -69.80002}
+  m_AnchoredPosition: {x: 6.699951, y: -69.80002}
   m_SizeDelta: {x: 221.33, y: 221.33}
   m_Pivot: {x: 0, y: 0}
 --- !u!95 &865390773
@@ -3477,7 +3477,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item_text: {fileID: 161450235}
   item_button: {fileID: 1160941481}
-  amount: 5
+  index: 1
 --- !u!114 &1160941481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3682,7 +3682,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 2.830017, y: -5.5349884}
+  m_AnchoredPosition: {x: 2.8300781, y: -5.5349884}
   m_SizeDelta: {x: 55.27002, y: 51.16501}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1200000073
@@ -3745,7 +3745,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Num_GameCoins: {fileID: 219715444}
-  Total_Coins: {fileID: 0}
+  Total_Coins: {fileID: 219715444}
 --- !u!4 &1213595044
 Transform:
   m_ObjectHideFlags: 0
@@ -3874,7 +3874,7 @@ Prefab:
     - target: {fileID: 224462760492595648, guid: 07aa68587080464498ef95fb0b54334f,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -27.08
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224831764732449788, guid: 07aa68587080464498ef95fb0b54334f,
         type: 2}
@@ -3894,7 +3894,7 @@ Prefab:
     - target: {fileID: 224831764732449788, guid: 07aa68587080464498ef95fb0b54334f,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -28.425
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224744853467956606, guid: 07aa68587080464498ef95fb0b54334f,
         type: 2}
@@ -3914,7 +3914,7 @@ Prefab:
     - target: {fileID: 224744853467956606, guid: 07aa68587080464498ef95fb0b54334f,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -27.08
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224831764732449788, guid: 07aa68587080464498ef95fb0b54334f,
         type: 2}
@@ -5189,7 +5189,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 61.379944, y: -5.535019}
+  m_AnchoredPosition: {x: 61.379883, y: -5.535019}
   m_SizeDelta: {x: 26.52002, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1761666958
@@ -5679,7 +5679,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item_text: {fileID: 714792819}
   item_button: {fileID: 1971499122}
-  amount: 5
+  index: 2
 --- !u!114 &1971499122
 MonoBehaviour:
   m_ObjectHideFlags: 0
