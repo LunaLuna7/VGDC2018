@@ -9,11 +9,13 @@ public class ItemCount : MonoBehaviour {
     public TMP_Text item_text;
     public Button item_button;
 
-    [SerializeField] private int amount;
+    private int amount;
+	[SerializeField] int index;
 
     void Start()
     {
-
+		PersistentDataManager.LoadData ();
+		amount = PersistentDataManager.masterData.itemList [index];
         UpdateText();
     }
 
