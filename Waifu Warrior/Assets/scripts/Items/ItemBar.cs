@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class ItemBar : MonoBehaviour {
 
+    [SerializeField] private GameObject player;
 
+    [SerializeField] private GameObject Shield;
     [SerializeField] private GameObject Clock;
     [SerializeField] private GameObject crosshair;
     [SerializeField] private GameObject BodyGuards;
+
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
 
     public void ClockTrigger()
     {
@@ -21,6 +28,11 @@ public class ItemBar : MonoBehaviour {
 
     public void GuardsTrigger()
     {
-        Instantiate(BodyGuards);
+        Instantiate(BodyGuards, player.transform.position, player.transform.rotation);
+    }
+
+    public void ShieldTrigger()
+    {
+        Instantiate(Shield, player.transform.position, player.transform.rotation);
     }
 }
