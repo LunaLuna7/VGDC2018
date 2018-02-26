@@ -21,13 +21,16 @@ public class BuyButton : MonoBehaviour {
 
         for (int i = 0; i < ItemShop.itemShop.itemList.Count; i++)
         {
-            if (ItemShop.itemShop.itemList[i].ItemID == itemID && !ItemShop.itemShop.itemList[i].bought && GameManager.gameManager.CheckMoney(ItemShop.itemShop.itemList[i].ItemPrice))
+			if (ItemShop.itemShop.itemList[i].ItemID == itemID /*&& !ItemShop.itemShop.itemList[i].bought*/ && GameManager.gameManager.CheckMoney(ItemShop.itemShop.itemList[i].ItemPrice) && PersistentDataManager.masterData.itemList[i] < 5)
             {
                 //We can buy item if hasnt been bought, have enough $$, and has same ID in the list.
 
                 ItemShop.itemShop.itemList[i].bought = true;
                 GameManager.gameManager.SubtractMoney(ItemShop.itemShop.itemList[i].ItemPrice);
                 UpdateBuyButton();
+
+				//item index = i, thus the save index for persistentdatamanager = i+itemstart;
+				PersistentDataManager.PurchaseItem(i);
             }
 
             //if they do not have enough gold.
