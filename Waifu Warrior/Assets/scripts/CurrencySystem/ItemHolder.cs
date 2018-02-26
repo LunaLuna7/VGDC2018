@@ -12,6 +12,6 @@ public class ItemHolder : MonoBehaviour {
     public TMP_Text itemPrice;
     public Image itemImage;
     public GameObject buyButton;
-
+	public TMP_Text amount;
 	
 }

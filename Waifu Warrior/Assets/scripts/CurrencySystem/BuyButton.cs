@@ -31,6 +31,7 @@ public class BuyButton : MonoBehaviour {
 
 				//item index = i, thus the save index for persistentdatamanager = i+itemstart;
 				PersistentDataManager.PurchaseItem(i);
+				ItemShop.itemShop.UpdateItemAmount (i+1);
             }
 
             //if they do not have enough gold.
