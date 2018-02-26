@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using TMPro;
 
 public class timer : MonoBehaviour {
 
 
-    public Text timerText;
+    public TMP_Text timerText;
     private float StartTime;
 
     public Text gamescore;
@@ -30,7 +31,7 @@ public class timer : MonoBehaviour {
         float t = Time.time;
 
         string minutes = ((int) t / 60).ToString();
-        string seconds = (t % 60).ToString("f2");
+        string seconds = (t % 60).ToString("f0");
         timerText.text = minutes + ':' + seconds;
  
 

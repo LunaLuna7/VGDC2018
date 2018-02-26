@@ -26,3 +26,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/scenes/Luis_Test.unity
     guid: ba42fb503ca790b44a8893a62084bb2b
+  - enabled: 1
+    path: Assets/scenes/MainScene.unity
+    guid: e433d532edbecf142a3881298ec51bb7
