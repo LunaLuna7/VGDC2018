@@ -23,7 +23,8 @@ public class ItemShop : MonoBehaviour {
 
     void FillList() //Instantiates an itemholder object into the grid in the UI
     {
-		int[] loadData = PersistentDataManager.GetItemAmounts ();
+		//int[] loadData = PersistentDataManager.GetItemAmounts ();
+		PersistentDataManager.LoadData();
         for (int i = 0; i < itemList.Count; i++)
         {
             GameObject holder = Instantiate(ItemHolderPrefab, grid, false);
@@ -32,6 +33,7 @@ public class ItemShop : MonoBehaviour {
             holderScript.itemName.text = itemList[i].ItemName;
             holderScript.itemPrice.text = itemList[i].ItemPrice.ToString();
             holderScript.itemID = itemList[i].ItemID;
+			holderScript.amount.text = PersistentDataManager.masterData.itemList [i].ToString ();
 
             //the buy button
             holderScript.buyButton.GetComponent<BuyButton>().itemID = itemList[i].ItemID;
@@ -40,7 +42,7 @@ public class ItemShop : MonoBehaviour {
             ItemHolderList.Add(holder);
             buyButtonList.Add(holderScript.buyButton); //keeps track of whihc button.
 
-			itemList [i].bought = loadData [i]>0?true:false;
+			itemList [i].bought = PersistentDataManager.masterData.itemList [i]>0?true:false;
 			if (itemList[i].bought == true)
             {                                                               //v----the sub directory.
                 holderScript.itemImage.sprite = Resources.Load<Sprite>("Sprites/" + itemList[i].SpriteName); //Goes to the Resources directory to grab the right sprites.
@@ -53,6 +55,24 @@ public class ItemShop : MonoBehaviour {
             }
         }
     }
+
+	public void UpdateItemAmount(int currentItemID){
+		for (int i = 0; i < ItemHolderList.Count; i++)
+		{
+			ItemHolder holderScript = ItemHolderList[i].GetComponent<ItemHolder>();
+			if (holderScript.itemID == currentItemID)
+			{
+				for (int j = 0; j < itemList.Count; j++)
+				{
+					if (itemList[j].ItemID == currentItemID)
+					{
+						holderScript.amount.text = PersistentDataManager.masterData.itemList [currentItemID - 1].ToString();
+					}
+				}
+			}
+
+		}
+	}
 
     public void UpdateSprite(int currentItemID)
     {
@@ -68,7 +88,7 @@ public class ItemShop : MonoBehaviour {
                         if (itemList[j].bought == true)
                         {                                                               
                             holderScript.itemImage.sprite = Resources.Load<Sprite>("Sprites/" + itemList[i].SpriteName);
-                            holderScript.itemPrice.text = ""; //After bought change string to empty.
+                            //holderScript.itemPrice.text = ""; //After bought change string to empty.
                         }
                         else
                         {

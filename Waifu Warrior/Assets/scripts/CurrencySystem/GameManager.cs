@@ -49,7 +49,9 @@ public class GameManager : MonoBehaviour {
 
     void UpdateUI()
     {
-        moneyText.text = Money.ToString();
+		if (moneyText != null) {
+			moneyText.text = Money.ToString ();
+		}
     }
 
 	public void SetMoney(int amount){
