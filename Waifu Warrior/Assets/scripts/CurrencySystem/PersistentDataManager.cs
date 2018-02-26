@@ -7,6 +7,7 @@ using System;
 
 public static class PersistentDataManager {
 	public static int[] itemAmounts = new int[Data.itemEndIndex - Data.itemStartIndex];
+	public static PersistentData masterData = new PersistentData ();
 
 	static void CreateFile(){
 		if (!File.Exists(Application.persistentDataPath + "/PlayerData.txt"))
@@ -40,9 +41,13 @@ public static class PersistentDataManager {
 
 			//Save data to variables.
 			GameManager.gameManager.SetMoney(Convert.ToInt32(splitData[(int)Data.money]));
+			masterData.money = Convert.ToInt32(splitData[(int)Data.money]);
 			for(int i = (int)Data.itemStartIndex; i < (int)Data.itemEndIndex; i++){
-				itemAmounts[i - (int)Data.itemStartIndex] = splitData[i];
+				itemAmounts[i - (int)Data.itemStartIndex] = Int32.Parse(splitData[i]);
+				masterData.itemList[i - (int)Data.itemStartIndex] = Int32.Parse(splitData[i]);
 			}
+
+			Debug.Log("Master Data{\nMoney: " + masterData.money + "\nItems: " + masterData.itemList.Length + "\n}");
 		}
 		catch(Exception e){
 			Debug.Log ("Load failed. " + e);
@@ -100,21 +105,41 @@ public static class PersistentDataManager {
 		toReturn += GameManager.gameManager.GetMoney ().ToString ();
 
 		//Save items
-		if (ItemShop.itemShop != null) {
-			for (int i = 0; i < ItemShop.itemShop.itemList.Count; i++) {
-				toReturn += ',' + (ItemShop.itemShop.itemList [i].bought ? "1" : "0");
-			}
-		} else {
-			toReturn += GetItemData ();
+		//if (ItemShop.itemShop != null) {
+		//	for (int i = 0; i < ItemShop.itemShop.itemList.Count; i++) {
+		//		toReturn += ',' + (ItemShop.itemShop.itemList [i].bought ? "1" : "0");
+		//	}
+		//} else {
+		//	toReturn += GetItemData ();
+		//}
+		for (int i = 0; i < masterData.itemList.Length; i++) {
+			toReturn += ',' + masterData.itemList[i].ToString();
 		}
 			
 		return toReturn;
 	}
 
-	public class PersistentData{
-		int money;
-		public List<Items> itemList = new List<Items>();
+	public static void PurchaseItem(int index){
+		masterData.itemList [index]++;
+		Debug.Log ("Item purchased at index " + index + ". Current tally: " + masterData.itemList [index]);
+		SaveData ();
 	}
+
+	public static void UseItem(int index){
+		masterData.itemList [index]--;
+		SaveData ();
+	}
+
+	public static void ChangeMoney(int value){
+		masterData.money += value;
+		SaveData ();
+	}
+
+	public class PersistentData{
+		public int money = 0;
+		public int[] itemList = new int[(int)Data.itemEndIndex - (int)Data.itemStartIndex];
+	}
+
 }
 
 public enum Data{
