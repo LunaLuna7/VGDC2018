@@ -13,11 +13,15 @@ public class GameManager : MonoBehaviour {
     public TMP_Text moneyText;
 
 
-	void Start ()
+	void Awake ()
     {
         gameManager = this;
-        //Money = Bank.BankCoins;
-        UpdateUI();
+	}
+
+	void Start(){
+		//Money = Bank.BankCoins;
+		PersistentDataManager.LoadData();
+		UpdateUI();
 	}
 	
 	
@@ -47,4 +51,21 @@ public class GameManager : MonoBehaviour {
     {
         moneyText.text = Money.ToString();
     }
+
+	public void SetMoney(int amount){
+		Money = amount;
+		UpdateUI ();
+	}
+
+	public int GetMoney(){
+		return Money;
+	}
+
+	void OnApplicationQuit(){
+		PersistentDataManager.SaveData ();
+	}
+
+	void OnDestroy(){
+		PersistentDataManager.SaveData ();
+	}
 }

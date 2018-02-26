@@ -16,7 +16,12 @@ public class Shield : MonoBehaviour {
         player.GetComponent<Player>().immune = false;
     }
 
+
+
     void Update() {
+
+        this.transform.position = player.transform.position;
+
         duration -= Time.deltaTime;
         if (duration <= 0) {
             Destroy(gameObject);
