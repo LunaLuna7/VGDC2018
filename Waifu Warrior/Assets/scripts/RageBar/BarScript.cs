@@ -12,6 +12,8 @@ public class BarScript : MonoBehaviour {
 
     public float MaxValue{get; set;}
 
+    public Transform target;
+    Rigidbody2D rgbd;
     public float Value
     {
         set
@@ -48,5 +50,19 @@ public class BarScript : MonoBehaviour {
         //(78-0)* (1-0)/ (230-0) + 0
         // 78*1 / 230 = 0.339
 
+    }
+    public void addRage()
+       {
+          target = GameObject.FindGameObjectWithTag("Enemy").transform;
+          rgbd = gameObject.GetComponent<Rigidbody2D>();
+       if (Destroy(gameObject))
+        {
+            fillAmount += 0.02;
+        }
+        if (fillAmount == MaxValue)
+        {
+            BarTrigger();
+        }
+    }
     }
 }
