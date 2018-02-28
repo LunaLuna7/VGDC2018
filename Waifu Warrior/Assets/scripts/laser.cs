@@ -2,47 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class laser : MonoBehaviour {
+public class laser : MonoBehaviour
+{
 
 
     public Transform Projectile;
-    public Transform target;
+    public Vector3 target;
     public float speed;
-    public int health;
     Rigidbody2D rgbd;
 
-    // Use this for initialization
-    void Awake()
-    {
-        rgbd = gameObject.GetComponent<Rigidbody2D>();
-        //target = GameObject.FindGameObjectWithTag("Player").transform;
-    }
     void Start()
     {
-        Projectile.rotation = Quaternion.LookRotation(target.position - Projectile.position);
-        rgbd.velocity = transform.forward * speed;
-        
-        
-       
+        rgbd = gameObject.GetComponent<Rigidbody2D>();
+        target = GameObject.FindGameObjectWithTag("Player").transform.position;
+        target.z = 0f;
+
+        Vector3 objectPos = transform.position;
+        target.x = target.x - objectPos.x;
+        target.y = target.y - objectPos.y;
+
+        float angle = Mathf.Atan2(target.x, target.y) * Mathf.Rad2Deg;
+    
+        transform.rotation = Quaternion.Euler(new Vector3(0,0,angle));
+        rgbd.velocity = transform.right * speed;
+
     }
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        //Move();
-
-    }
-
     void Update()
     {
-
+        //rgbd.velocity = transform.forward * speed;
     }
 
-
-    void Move()
-    {
-        
-        //transform.position = Vector3.MoveTowards( transform.position, target.transform.position,speed * Time.deltaTime);
-        //rgbd.MovePosition(Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime));
-    }
 }

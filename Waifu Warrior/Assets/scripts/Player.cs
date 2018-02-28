@@ -7,6 +7,12 @@ public class Player : MonoBehaviour {
     [SerializeField]
     private int Health;
     public bool immune = false;
+    public GameObject healthbar;
+
+    private void Start()
+    {
+        healthbar = GameObject.FindWithTag("Health");
+    }
 
     void OnMouseDrag()
     {
@@ -15,11 +21,16 @@ public class Player : MonoBehaviour {
         transform.position = objPosition;
     }
 
+        
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!immune && collision.gameObject.CompareTag("Enemy"))
         {
+            Destroy(collision.gameObject);
             Health -= 1;
+
+            healthbar.GetComponent<HealthBar>().TakeDamage(-1);
+
             if (Health <= 0)
             {
                 Destroy(gameObject);

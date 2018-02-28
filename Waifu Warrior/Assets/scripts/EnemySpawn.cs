@@ -10,13 +10,33 @@ public class EnemySpawn : MonoBehaviour {
     public float startWait;     //Initial wait time before spawning any objects
     public float waveWait;      //Time between each wave
 
+    public int EnemyID; //Identifies which enemy and uses info to set hazardcount grow.
+
     [SerializeField] Vector2 topLeftSpawnPoint;
     [SerializeField] Vector2 bottomRightSpawnPoint;
     [SerializeField] int zSpawnPoint;
 
     // Use this for initialization
     void Start() {
+        StartCoroutine(Increment());
         StartCoroutine(SpawnWaves());
+    }
+
+    IEnumerator Increment()
+    {
+        while (true)
+        {
+            if (EnemyID == 0)
+            {
+                yield return new WaitForSeconds(30);
+                hazardCount = hazardCount += 1;
+                //spawnWait = spawnWait -= .01f;
+            }
+            else
+            {
+                yield return new WaitForSeconds(10);
+            }
+        }
     }
 
     IEnumerator SpawnWaves() {

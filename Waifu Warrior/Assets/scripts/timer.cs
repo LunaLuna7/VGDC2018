@@ -15,9 +15,6 @@ public class timer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
-
-
         StartTime = Time.time;
         
         highscore.text = PlayerPrefs.GetFloat("Highscore").ToString("f2");
