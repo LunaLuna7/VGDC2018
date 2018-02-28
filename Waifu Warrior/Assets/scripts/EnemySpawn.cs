@@ -11,6 +11,10 @@ public class EnemySpawn : MonoBehaviour {
     public float waveWait;      //Time between each wave
 
     public int EnemyID; //Identifies which enemy and uses info to set hazardcount grow.
+    private bool WaitFan = true;
+    private bool WaitSensei = true;
+    private bool WaitSenpai = true;
+    private bool WaitRival = true;
 
     [SerializeField] Vector2 topLeftSpawnPoint;
     [SerializeField] Vector2 bottomRightSpawnPoint;
@@ -26,15 +30,66 @@ public class EnemySpawn : MonoBehaviour {
     {
         while (true)
         {
-            if (EnemyID == 0)
+            if (EnemyID == 0) //Rival
             {
-                yield return new WaitForSeconds(30);
-                hazardCount = hazardCount += 1;
-                //spawnWait = spawnWait -= .01f;
+                if (WaitRival == false)
+                {
+                    yield return new WaitForSeconds(20);
+                    hazardCount = hazardCount += 1;
+                    //spawnWait = spawnWait -= .01f;
+                }
+                else
+                {
+                    yield return new WaitForSeconds(startWait);
+                    WaitRival = false;
+                }
+            }
+            else if(EnemyID == 1) //Fan
+            {
+                if (WaitFan == false)
+                {
+                    yield return new WaitForSeconds(30);
+                    hazardCount = hazardCount += 1;
+                    
+                }
+                else
+                {
+                    yield return new WaitForSeconds(startWait);
+                    WaitFan = false;
+                }
+            }
+            else if(EnemyID == 2) //Sensei
+            {
+                if (WaitSensei == false)
+                {
+                    yield return new WaitForSeconds(20);
+                    hazardCount = hazardCount += 1;
+
+                }
+                else
+                {
+                    yield return new WaitForSeconds(startWait);
+                    WaitSensei = false;
+                }
+            }
+            else if(EnemyID == 3) //Senpai
+            {
+                if (WaitSenpai == false)
+                {
+                    yield return new WaitForSeconds(30);
+                    hazardCount = hazardCount += 1;
+
+                }
+                else
+                {
+                    yield return new WaitForSeconds(startWait);
+                    WaitSenpai = false;
+                }
             }
             else
             {
-                yield return new WaitForSeconds(10);
+                Debug.Log("Error: incorrect enemy ID");
+                yield return new WaitForSeconds(1);
             }
         }
     }
