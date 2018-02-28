@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour {
 
-    private int maxHeartAmount = 6;
+    private int maxHeartAmount = 3;
     public int startHearts = 3;
     public int curHealth;
     private int maxHealth;

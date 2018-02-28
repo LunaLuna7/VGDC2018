@@ -64,6 +64,8 @@ public class SenpaiAI : MonoBehaviour {
         rgbd.MovePosition(Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime));
     }
 
+    
+
     IEnumerator DistanceAttack()
     {
         int num_lasers = 10;
