@@ -14,4 +14,13 @@ static class WrathManager{
 
     }
 
+    public static bool FullWrath()
+    {
+        if(fillAmountWrath == 1) // == max fillAmount
+        {
+            return true;
+        }
+        return false;
+    }
+
 }

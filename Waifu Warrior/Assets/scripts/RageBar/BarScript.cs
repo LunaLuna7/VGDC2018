@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class BarScript : MonoBehaviour {
-
+    [SerializeField] private GameObject Rage_2;
     [SerializeField]//to make fillamount public but can only be access by inspector
     private float fillAmount;
     [SerializeField]//temporary
@@ -49,4 +49,24 @@ public class BarScript : MonoBehaviour {
         // 78*1 / 230 = 0.339
 
     }
-}
+    public void addRage()
+       {
+        if (WrathManager.FullWrath())
+        {
+            BarTrigger();
+        }
+    }
+    public void BarTrigger()
+    {
+        Instantiate(Rage_2);
+        Rage_2.gameObject.SetActive(true);
+        WrathManager.EmptyWrath();
+        Rage_2.gameObject.SetActive(false);
+    }
+    /*void OnTriggerEnter(Collider other)
+        {
+            Destroy(other.gameObject);
+        }*/
+ }
+
+
