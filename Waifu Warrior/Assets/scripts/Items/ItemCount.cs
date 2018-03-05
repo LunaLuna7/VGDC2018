@@ -21,7 +21,7 @@ public class ItemCount : MonoBehaviour {
 
     public void decrement()
     {
-        if(amount == 1)
+        if(amount == -4) //amount <= 1
         {
             item_button.interactable = false;
         }
