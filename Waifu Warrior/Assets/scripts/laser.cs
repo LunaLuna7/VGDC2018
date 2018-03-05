@@ -5,7 +5,6 @@ using UnityEngine;
 public class laser : MonoBehaviour
 {
 
-
     public Transform Projectile;
     public Vector3 target;
     public float speed;
@@ -18,7 +17,7 @@ public class laser : MonoBehaviour
         target.z = 0f;
 
         Vector3 objectPos = transform.position;
-        target.x = target.x - objectPos.x;
+        target.x = target.x - objectPos.x; //calculte angle to point towards target by doing this angle - target angle = difference angle, no work :(  
         target.y = target.y - objectPos.y;
 
         float angle = Mathf.Atan2(target.x, target.y) * Mathf.Rad2Deg;
