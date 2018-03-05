@@ -402,11 +402,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4863617799429842, guid: ac09de7d0eee2ed459e6b8d197de35b3, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.9577881
+      value: -5.08
       objectReference: {fileID: 0}
     - target: {fileID: 4863617799429842, guid: ac09de7d0eee2ed459e6b8d197de35b3, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -4.6564794
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 4863617799429842, guid: ac09de7d0eee2ed459e6b8d197de35b3, type: 2}
       propertyPath: m_LocalPosition.z
@@ -434,7 +434,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1505425830622440, guid: ac09de7d0eee2ed459e6b8d197de35b3, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac09de7d0eee2ed459e6b8d197de35b3, type: 2}
@@ -706,11 +706,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4199712608059560, guid: e139f74f4b957c444833467334f6691f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -3.73
+      value: -3.22
       objectReference: {fileID: 0}
     - target: {fileID: 4199712608059560, guid: e139f74f4b957c444833467334f6691f, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.36
+      value: -3.08
       objectReference: {fileID: 0}
     - target: {fileID: 4199712608059560, guid: e139f74f4b957c444833467334f6691f, type: 2}
       propertyPath: m_LocalPosition.z
@@ -747,7 +747,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1017043194024022, guid: e139f74f4b957c444833467334f6691f, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114998004629906744, guid: e139f74f4b957c444833467334f6691f, type: 2}
@@ -1284,6 +1284,7 @@ MonoBehaviour:
   spawnWait: 1
   startWait: 30
   waveWait: 1
+  EnemyID: 0
   topLeftSpawnPoint: {x: 7, y: 11}
   bottomRightSpawnPoint: {x: -7, y: -11}
   zSpawnPoint: 0
@@ -1357,6 +1358,7 @@ MonoBehaviour:
   spawnWait: 1
   startWait: 45
   waveWait: 1
+  EnemyID: 0
   topLeftSpawnPoint: {x: 7, y: 11}
   bottomRightSpawnPoint: {x: -7, y: -11}
   zSpawnPoint: 0
@@ -2352,7 +2354,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1795395625794304, guid: c484bd7a5c70af34cbb38683c8a46528, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114519896419502506, guid: c484bd7a5c70af34cbb38683c8a46528,
         type: 2}
@@ -2496,6 +2498,7 @@ MonoBehaviour:
   spawnWait: 2
   startWait: 15
   waveWait: 1
+  EnemyID: 0
   topLeftSpawnPoint: {x: 7, y: 11}
   bottomRightSpawnPoint: {x: -7, y: -11}
   zSpawnPoint: 0
@@ -3090,7 +3093,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1314014489}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.98, y: 1.21, z: 0}
+  m_LocalPosition: {x: 4.96, y: 0.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3741,6 +3744,7 @@ MonoBehaviour:
   spawnWait: 1
   startWait: 1
   waveWait: 1
+  EnemyID: 0
   topLeftSpawnPoint: {x: 7, y: 11}
   bottomRightSpawnPoint: {x: -7, y: -11}
   zSpawnPoint: 0
