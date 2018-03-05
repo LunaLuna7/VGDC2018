@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class BarScript : MonoBehaviour {
-
+    [SerializeField] private GameObject Rage_2;
     [SerializeField]//to make fillamount public but can only be access by inspector
     private float fillAmount;
     [SerializeField]//temporary
@@ -12,8 +12,6 @@ public class BarScript : MonoBehaviour {
 
     public float MaxValue{get; set;}
 
-    public Transform target;
-    Rigidbody2D rgbd;
     public float Value
     {
         set
@@ -53,16 +51,22 @@ public class BarScript : MonoBehaviour {
     }
     public void addRage()
        {
-          target = GameObject.FindGameObjectWithTag("Enemy").transform;
-          rgbd = gameObject.GetComponent<Rigidbody2D>();
-       if (Destroy(gameObject))
-        {
-            fillAmount += 0.02;
-        }
-        if (fillAmount == MaxValue)
+        if (WrathManager.FullWrath())
         {
             BarTrigger();
         }
     }
+    public void BarTrigger()
+    {
+        Instantiate(Rage_2);
+        Rage_2.gameObject.SetActive(true);
+        WrathManager.EmptyWrath();
+        Rage_2.gameObject.SetActive(false);
     }
-}
+    /*void OnTriggerEnter(Collider other)
+        {
+            Destroy(other.gameObject);
+        }*/
+ }
+
+
