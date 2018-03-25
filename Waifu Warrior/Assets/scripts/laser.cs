@@ -4,31 +4,37 @@ using UnityEngine;
 
 public class laser : MonoBehaviour
 {
-
-    public Transform Projectile;
-    public Vector3 target;
+    public Transform target;
     public float speed;
     Rigidbody2D rgbd;
 
     void Start()
     {
         rgbd = gameObject.GetComponent<Rigidbody2D>();
-        target = GameObject.FindGameObjectWithTag("Player").transform.position;
-        target.z = 0f;
+        target = GameObject.FindGameObjectWithTag("Player").transform;
 
-        Vector3 objectPos = transform.position;
-        target.x = target.x - objectPos.x; //calculte angle to point towards target by doing this angle - target angle = difference angle, no work :(  
-        target.y = target.y - objectPos.y;
-
-        float angle = Mathf.Atan2(target.x, target.y) * Mathf.Rad2Deg;
-    
-        transform.rotation = Quaternion.Euler(new Vector3(0,0,angle));
+        transform.right = target.position - transform.position;
         rgbd.velocity = transform.right * speed;
+        StartCoroutine(DestroyObject());
 
     }
-    void Update()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        //rgbd.velocity = transform.forward * speed;
+       
+       
+        Destroy(gameObject);
+        
     }
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!collision.gameObject.CompareTag("Gold"))
+        {
+            Destroy(gameObject);
+        }
+    }
+    IEnumerator DestroyObject()
+    {
+        yield return new WaitForSeconds(7);
+        Destroy(gameObject);
+    }
 }

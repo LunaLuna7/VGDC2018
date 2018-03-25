@@ -10,6 +10,8 @@ public class Boundary
 
 public class Player : MonoBehaviour {
 
+    public int ID;
+
     public Boundary boundary;
 
     [SerializeField]
@@ -17,21 +19,32 @@ public class Player : MonoBehaviour {
     public bool immune = false;
     public GameObject healthbar;
     Rigidbody2D rgbd;
-    public Sprite image;
+    public SpriteRenderer image;
     public Sprite camo;
 
     public bool dragOn = true;
 
+    public GameObject GameOver;
+
+    private int CharacterSelected;
     private void Start()
     {
+        CharacterSelected = PlayerPrefs.GetInt("CharacterSelected");
+        Debug.Log(CharacterSelected);
+        Debug.Log(ID);
+        if(CharacterSelected != ID)
+        {
+            Debug.Log("In if statement");
+            this.gameObject.SetActive(false);
+        }
         healthbar = GameObject.FindWithTag("Health");
         rgbd = gameObject.GetComponent<Rigidbody2D>();
-        image = gameObject.GetComponent<SpriteRenderer>().sprite;
+        image = gameObject.GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
-        if(rgbd.position.y > boundary.yMax || rgbd.position.y < boundary.yMin) { Debug.Log('a'); dragOn = false; }
+        if(rgbd.position.y > boundary.yMax || rgbd.position.y < boundary.yMin) { dragOn = false; }
         else { dragOn = true; }
         
         rgbd.position = new Vector2
@@ -43,11 +56,9 @@ public class Player : MonoBehaviour {
 
     void OnMouseDrag()
     {
+        image.sprite = camo;
         if (dragOn)
         {
-            
-
-            Debug.Log("hi");
             Vector2 mousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
             Vector2 objPosition = Camera.main.ScreenToWorldPoint(mousePosition);
             transform.position = objPosition;
@@ -66,6 +77,7 @@ public class Player : MonoBehaviour {
             if (Health <= 0)
             {
                 Destroy(gameObject);
+                GameOver.SetActive(true);
             }
         }
     }

@@ -9,6 +9,7 @@ public class RandomBackground : MonoBehaviour {
 
     void Start()
     {
+        FindObjectOfType<MusicManager>().Play("GameSong");
         Instantiate(BackgroundArray[Random.Range(0, BackgroundArray.Length)]);
     }
 

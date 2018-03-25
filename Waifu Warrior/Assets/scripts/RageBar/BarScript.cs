@@ -3,15 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class BarScript : MonoBehaviour {
-    [SerializeField] private GameObject Rage_2;
+    [SerializeField] private Button RageBar;
     [SerializeField]//to make fillamount public but can only be access by inspector
     private float fillAmount;
     [SerializeField]//temporary
     private Image content;
+    public GameObject WrathRing;
 
     public float MaxValue{get; set;}
 
+    private Animator wrathFace;
+
+    
     public float Value
     {
         set
@@ -21,16 +26,23 @@ public class BarScript : MonoBehaviour {
     }
 	// Use this for initialization
 	void Start () {
-        //Value = 0;
+        wrathFace = gameObject.GetComponent<Animator>();
+        WrathManager.EmptyWrath();
 	}
 	
 	// Update is called once per frame
-	void Update () {
-        //Value = 0;
-        HandleBar();
+	void Update ()
+    {
+        CheckRage();
+        HandleBar();    
 	}
+
     private void HandleBar()
     {
+        if(WrathManager.fillAmountWrath != fillAmount)
+        {
+            fillAmount = WrathManager.fillAmountWrath;
+        }
         if(fillAmount!= content.fillAmount)
         {
             content.fillAmount = fillAmount;
@@ -49,24 +61,32 @@ public class BarScript : MonoBehaviour {
         // 78*1 / 230 = 0.339
 
     }
-    public void addRage()
-       {
+
+    public void CheckRage()
+    {
         if (WrathManager.FullWrath())
         {
-            BarTrigger();
+            activateButton();
         }
     }
-    public void BarTrigger()
+
+    public void activateButton()
     {
-        Instantiate(Rage_2);
-        Rage_2.gameObject.SetActive(true);
-        WrathManager.EmptyWrath();
-        Rage_2.gameObject.SetActive(false);
+        RageBar.interactable = true;
+        wrathFace.SetBool("Wrath", true);        
+    
     }
-    /*void OnTriggerEnter(Collider other)
-        {
-            Destroy(other.gameObject);
-        }*/
+
+    public void useWrath()
+    {
+        
+        Instantiate(WrathRing);
+        WrathManager.EmptyWrath();
+        RageBar.interactable = false;
+        wrathFace.SetBool("Wrath", false);
+    }
+
+    
  }
 
 
