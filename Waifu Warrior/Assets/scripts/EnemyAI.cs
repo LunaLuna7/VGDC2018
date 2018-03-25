@@ -39,11 +39,12 @@ public class EnemyAI : MonoBehaviour {
 
 	void OnMouseDown(){
 
+        FindObjectOfType<AudioManager>().Play("Tap");
         health = health - 1;
         Instantiate(hit, transform.position, transform.rotation);
         if(health <= 0) 
         {
-            WrathManager.fillAmountWrath += .25; 
+            WrathManager.fillAmountWrath += .02f; 
             Destroy(gameObject);
         }
 	}

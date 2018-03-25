@@ -34,7 +34,7 @@ public class EnemySpawn : MonoBehaviour {
             {
                 if (WaitRival == false)
                 {
-                    yield return new WaitForSeconds(20);
+                    yield return new WaitForSeconds(40); //20
                     hazardCount = hazardCount += 1;
                     //spawnWait = spawnWait -= .01f;
                 }
@@ -48,7 +48,7 @@ public class EnemySpawn : MonoBehaviour {
             {
                 if (WaitFan == false)
                 {
-                    yield return new WaitForSeconds(30);
+                    yield return new WaitForSeconds(60); //30
                     hazardCount = hazardCount += 1;
                     
                 }
@@ -62,7 +62,7 @@ public class EnemySpawn : MonoBehaviour {
             {
                 if (WaitSensei == false)
                 {
-                    yield return new WaitForSeconds(20);
+                    yield return new WaitForSeconds(40); //20
                     hazardCount = hazardCount += 1;
 
                 }
@@ -76,7 +76,7 @@ public class EnemySpawn : MonoBehaviour {
             {
                 if (WaitSenpai == false)
                 {
-                    yield return new WaitForSeconds(30);
+                    yield return new WaitForSeconds(60); //30
                     hazardCount = hazardCount += 1;
 
                 }

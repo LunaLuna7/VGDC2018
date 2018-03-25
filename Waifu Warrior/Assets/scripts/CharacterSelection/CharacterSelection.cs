@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 public class CharacterSelection : MonoBehaviour {
 
     private GameObject[] characterList;
@@ -50,5 +51,6 @@ public class CharacterSelection : MonoBehaviour {
     public void ConfirmButton()
     {
         PlayerPrefs.SetInt("CharacterSelected", index);
+        Debug.Log(PlayerPrefs.GetInt("CharacterSelected"));
     }
 }

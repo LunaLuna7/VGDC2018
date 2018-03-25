@@ -9,11 +9,13 @@ public class BodyGuardMove : MonoBehaviour {
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        
+        FindObjectOfType<AudioManager>().Play("Whistle");
+
     }
 
     void Update ()
     {
+        
         this.transform.position = player.transform.position;
         
 	}

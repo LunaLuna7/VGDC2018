@@ -18,11 +18,11 @@ public class CoinUI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(Bank.BankCoins);
+
         PlayerPrefs.SetInt("PlayerGold", Bank.BankCoins);
 
         Num_GameCoins.text = Bank.CurrentGameCoins.ToString();
         
-        Total_Coins.text = PlayerPrefs.GetInt("PlayerGold").ToString();
+        //Total_Coins.text = PlayerPrefs.GetInt("PlayerGold").ToString();
     }   
 }
