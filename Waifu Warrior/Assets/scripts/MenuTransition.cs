@@ -6,6 +6,7 @@ public class MenuTransition : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        FindObjectOfType<MusicManager>().Play("MenuSong");
         Time.timeScale = 1f;
         
         FindObjectOfType<MusicManager>().Stop("GameSong");

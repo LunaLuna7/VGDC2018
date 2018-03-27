@@ -11,6 +11,7 @@ public class BarScript : MonoBehaviour {
     [SerializeField]//temporary
     private Image content;
     public GameObject WrathRing;
+    private bool singleRun = true;
 
     public float MaxValue{get; set;}
 
@@ -26,6 +27,7 @@ public class BarScript : MonoBehaviour {
     }
 	// Use this for initialization
 	void Start () {
+        
         wrathFace = gameObject.GetComponent<Animator>();
         WrathManager.EmptyWrath();
 	}
@@ -64,22 +66,27 @@ public class BarScript : MonoBehaviour {
 
     public void CheckRage()
     {
-        if (WrathManager.FullWrath())
+        
+        if (WrathManager.FullWrath() && singleRun == true)
         {
+            singleRun = false;
+            FindObjectOfType<AudioManager>().Play("ChargedWrath");
             activateButton();
+            
         }
     }
 
     public void activateButton()
     {
         RageBar.interactable = true;
-        wrathFace.SetBool("Wrath", true);        
-    
+        wrathFace.SetBool("Wrath", true);
+        
+
     }
 
     public void useWrath()
     {
-        
+        singleRun = true;
         Instantiate(WrathRing);
         WrathManager.EmptyWrath();
         RageBar.interactable = false;

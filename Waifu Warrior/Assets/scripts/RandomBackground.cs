@@ -10,6 +10,8 @@ public class RandomBackground : MonoBehaviour {
     void Start()
     {
         FindObjectOfType<MusicManager>().Play("GameSong");
+        FindObjectOfType<MusicManager>().Stop("MenuSong");
+        FindObjectOfType<AudioManager>().Play("Bell");
         Instantiate(BackgroundArray[Random.Range(0, BackgroundArray.Length)]);
     }
 
