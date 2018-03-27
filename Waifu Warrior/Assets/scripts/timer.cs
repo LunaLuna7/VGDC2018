@@ -39,7 +39,7 @@ public class timer : MonoBehaviour {
             highscore.text = timerText.text;
         }
         PlayerPrefs.SetFloat("Gamescore", time);
-        gamescore.text = timerText.text;
+        //gamescore.text = timerText.text;
     }
 
     public void Reset()
