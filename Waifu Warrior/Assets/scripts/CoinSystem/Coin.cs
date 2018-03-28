@@ -22,7 +22,7 @@ public class Coin : MonoBehaviour {
     void OnTouch()
     {
         Bank.IncrementCoin();
-        GameManager.gameManager.AddMoney(1);
+        GameManager.gameManager.AddMoney(100);
         Destroy(gameObject);
     }
 

@@ -15,6 +15,9 @@ public class ItemShop : MonoBehaviour {
     public GameObject ItemHolderPrefab; //Where the Item holder object goes
     public Transform grid;
 
+
+
+
     void Start()
     {
         itemShop = this; //Makes self/this be the static instance at start of game. 
@@ -35,6 +38,39 @@ public class ItemShop : MonoBehaviour {
             holderScript.itemID = itemList[i].ItemID;
 			holderScript.amount.text = PersistentDataManager.masterData.itemList [i].ToString ();
 
+            if (holderScript.amount.text == "0")
+            {
+                holderScript.bar1.SetActive(false);
+                holderScript.bar2.SetActive(false);
+                holderScript.bar3.SetActive(false);
+                holderScript.bar4.SetActive(false);
+                holderScript.bar5.SetActive(false);
+            }
+            if (holderScript.amount.text == "1")
+            {
+                holderScript.bar1.SetActive(true);
+            }
+            if (holderScript.amount.text == "2")
+            {
+                holderScript.bar1.SetActive(false);
+                holderScript.bar2.SetActive(true);
+            }
+            if (holderScript.amount.text == "3")
+            {
+                holderScript.bar2.SetActive(false);
+                holderScript.bar3.SetActive(true);
+            }
+            if (holderScript.amount.text == "4")
+            {
+
+                holderScript.bar3.SetActive(false);
+                holderScript.bar4.SetActive(true);
+            }
+            if (holderScript.amount.text == "5")
+            {
+                holderScript.bar4.SetActive(false);
+                holderScript.bar5.SetActive(true);
+            }
             //the buy button
             holderScript.buyButton.GetComponent<BuyButton>().itemID = itemList[i].ItemID;
 
@@ -67,7 +103,40 @@ public class ItemShop : MonoBehaviour {
 					if (itemList[j].ItemID == currentItemID)
 					{
 						holderScript.amount.text = PersistentDataManager.masterData.itemList [currentItemID - 1].ToString();
-					}
+                        if (holderScript.amount.text == "0")
+                        {
+                            holderScript.bar1.SetActive(false);
+                            holderScript.bar2.SetActive(false);
+                            holderScript.bar3.SetActive(false);
+                            holderScript.bar4.SetActive(false);
+                            holderScript.bar5.SetActive(false);
+                        }
+                        if (holderScript.amount.text == "1")
+                        {
+                            holderScript.bar1.SetActive(true);
+                        }
+                        if (holderScript.amount.text == "2")
+                        {
+                            holderScript.bar1.SetActive(false);
+                            holderScript.bar2.SetActive(true);
+                        }
+                        if (holderScript.amount.text == "3")
+                        {
+                            holderScript.bar2.SetActive(false);
+                            holderScript.bar3.SetActive(true);
+                        }
+                        if (holderScript.amount.text == "4")
+                        {
+                            
+                            holderScript.bar3.SetActive(false);
+                            holderScript.bar4.SetActive(true);
+                        }
+                        if (holderScript.amount.text == "5")
+                        {
+                            holderScript.bar4.SetActive(false);
+                            holderScript.bar5.SetActive(true);
+                        }
+                    }
 				}
 			}
 
