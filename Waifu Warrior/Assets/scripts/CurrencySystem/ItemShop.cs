@@ -40,6 +40,7 @@ public class ItemShop : MonoBehaviour {
 
             if (holderScript.amount.text == "0")
             {
+                holderScript.amount.text = "";
                 holderScript.bar1.SetActive(false);
                 holderScript.bar2.SetActive(false);
                 holderScript.bar3.SetActive(false);
