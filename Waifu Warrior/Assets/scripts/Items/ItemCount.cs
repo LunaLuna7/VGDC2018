@@ -10,12 +10,12 @@ public class ItemCount : MonoBehaviour {
     public Button item_button;
 
     private int amount;
-	[SerializeField] int index;
+	[SerializeField] Item item;
 
     void Start()
     {
 		PersistentDataManager.LoadData ();
-		amount = PersistentDataManager.masterData.itemList [index]; //I buy item but not reflected on game item bar
+		amount = PersistentDataManager.masterData.itemList [(int)item]; 
         UpdateText();
         if(amount == 0)
         {
@@ -26,7 +26,7 @@ public class ItemCount : MonoBehaviour {
     public void decrement()
     {
         amount -= 1;
-        //PersistentDataManager.UseItem(1); //<----how do i get which item to decrease?
+        PersistentDataManager.UseItem((int)item);
         UpdateText();
         if (amount == 0) //amount <= -4
         {

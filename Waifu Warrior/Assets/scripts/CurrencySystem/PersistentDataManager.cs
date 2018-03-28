@@ -145,5 +145,12 @@ public static class PersistentDataManager {
 public enum Data{
 	money = 0,
 	itemStartIndex = 1,
-	itemEndIndex= 7,
+	itemEndIndex= 5,
+}
+
+public enum Item {
+    Whistle = 0,
+    Clock = 1,
+    Candy = 2,
+    Gun = 3
 }

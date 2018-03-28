@@ -168,7 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item_text: {fileID: 807342011}
   item_button: {fileID: 17792499}
-  index: 0
+  item: 2
 --- !u!114 &17792499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -518,7 +518,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item_text: {fileID: 1046634698}
   item_button: {fileID: 131304294}
-  index: 0
+  item: 0
 --- !u!114 &131304294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4378,7 +4378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item_text: {fileID: 161450235}
   item_button: {fileID: 1160941481}
-  index: 0
+  item: 1
 --- !u!114 &1160941481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7398,7 +7398,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item_text: {fileID: 714792819}
   item_button: {fileID: 1971499122}
-  index: 0
+  item: 3
 --- !u!114 &1971499122
 MonoBehaviour:
   m_ObjectHideFlags: 0
