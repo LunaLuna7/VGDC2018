@@ -8,6 +8,7 @@ public class WrathRing : MonoBehaviour {
 
     void Start()
     {
+        FindObjectOfType<AudioManager>().Play("Wave");
         player = GameObject.FindGameObjectWithTag("Player");
         StartCoroutine(DestroyObject());
     }

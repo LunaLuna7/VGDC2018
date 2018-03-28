@@ -11,7 +11,7 @@ public class RandomBackground : MonoBehaviour {
     {
         FindObjectOfType<MusicManager>().Play("GameSong");
         FindObjectOfType<MusicManager>().Stop("MenuSong");
-        FindObjectOfType<AudioManager>().Play("Bell");
+        //FindObjectOfType<AudioManager>().Play("Bell");
         Instantiate(BackgroundArray[Random.Range(0, BackgroundArray.Length)]);
     }
 
