@@ -10,14 +10,19 @@ public class BarScript : MonoBehaviour {
     private float fillAmount;
     [SerializeField]//temporary
     private Image content;
-    public GameObject WrathRing;
+    
     private bool singleRun = true;
 
     public float MaxValue{get; set;}
 
     private Animator wrathFace;
 
-    
+    public int player;
+    public GameObject WrathRing;
+    public GameObject ElectricShock;
+    public GameObject WaterWave;
+    public GameObject LightWave;
+
     public float Value
     {
         set
@@ -27,7 +32,8 @@ public class BarScript : MonoBehaviour {
     }
 	// Use this for initialization
 	void Start () {
-        
+
+        player = PlayerPrefs.GetInt("CharacterSelected");
         wrathFace = gameObject.GetComponent<Animator>();
         WrathManager.EmptyWrath();
 	}
@@ -87,7 +93,25 @@ public class BarScript : MonoBehaviour {
     public void useWrath()
     {
         singleRun = true;
-        Instantiate(WrathRing);
+
+        if (player == 0)
+        {
+            Instantiate(WrathRing);
+        }
+        if (player == 1)
+        {
+            Instantiate(ElectricShock);
+        }
+        if (player == 2)
+        {
+            Instantiate(WaterWave);
+        }
+        if (player == 3)
+        {
+            Instantiate(LightWave);
+        }
+
+
         WrathManager.EmptyWrath();
         RageBar.interactable = false;
         wrathFace.SetBool("Wrath", false);

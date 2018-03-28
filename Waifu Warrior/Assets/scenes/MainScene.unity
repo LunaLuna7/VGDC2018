@@ -4714,7 +4714,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Num_GameCoins: {fileID: 219715444}
-  Total_Coins: {fileID: 0}
 --- !u!4 &1213595044
 Transform:
   m_ObjectHideFlags: 0
@@ -4843,7 +4842,7 @@ Prefab:
     - target: {fileID: 224462760492595648, guid: 07aa68587080464498ef95fb0b54334f,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -27.08
       objectReference: {fileID: 0}
     - target: {fileID: 224831764732449788, guid: 07aa68587080464498ef95fb0b54334f,
         type: 2}
@@ -4863,7 +4862,7 @@ Prefab:
     - target: {fileID: 224831764732449788, guid: 07aa68587080464498ef95fb0b54334f,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -28.425
       objectReference: {fileID: 0}
     - target: {fileID: 224744853467956606, guid: 07aa68587080464498ef95fb0b54334f,
         type: 2}
@@ -4883,7 +4882,7 @@ Prefab:
     - target: {fileID: 224744853467956606, guid: 07aa68587080464498ef95fb0b54334f,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -27.08
       objectReference: {fileID: 0}
     - target: {fileID: 224831764732449788, guid: 07aa68587080464498ef95fb0b54334f,
         type: 2}
@@ -6390,6 +6389,24 @@ Prefab:
       propertyPath: content
       value: 
       objectReference: {fileID: 1034656115}
+    - target: {fileID: 114600105672731626, guid: a46a0eca61b59e2479a3244c5f5615e1,
+        type: 2}
+      propertyPath: ElectricShock
+      value: 
+      objectReference: {fileID: 1380198122361678, guid: 500645219bc7fd54eb6d522043a8f424,
+        type: 2}
+    - target: {fileID: 114600105672731626, guid: a46a0eca61b59e2479a3244c5f5615e1,
+        type: 2}
+      propertyPath: LightWave
+      value: 
+      objectReference: {fileID: 1753383137741988, guid: 555a3c6cf612ff841bd6f81ad0f121eb,
+        type: 2}
+    - target: {fileID: 114600105672731626, guid: a46a0eca61b59e2479a3244c5f5615e1,
+        type: 2}
+      propertyPath: WaterWave
+      value: 
+      objectReference: {fileID: 1328426656732660, guid: 7fa197984170c60499da1c474c320a5b,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a46a0eca61b59e2479a3244c5f5615e1, type: 2}
   m_IsPrefabParent: 0
@@ -7216,6 +7233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a5b2ddf346826d4bb0563a44e6f7cce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FireWorks: {fileID: 0}
 --- !u!1 &1913205085 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1672947632987318, guid: 07aa68587080464498ef95fb0b54334f,
