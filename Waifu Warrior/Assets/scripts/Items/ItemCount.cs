@@ -15,18 +15,23 @@ public class ItemCount : MonoBehaviour {
     void Start()
     {
 		PersistentDataManager.LoadData ();
-		amount = PersistentDataManager.masterData.itemList [index];
+		amount = PersistentDataManager.masterData.itemList [index]; //I buy item but not reflected on game item bar
         UpdateText();
+        if(amount == 0)
+        {
+            item_button.interactable = false;
+        }
     }
 
     public void decrement()
     {
-        if(amount == -4) //amount <= 1
+        amount -= 1;
+        //PersistentDataManager.UseItem(1); //<----how do i get which item to decrease?
+        UpdateText();
+        if (amount == 0) //amount <= -4
         {
             item_button.interactable = false;
         }
-        amount = amount - 1;
-        UpdateText();
     }
 
     public void SetValue(int value)
