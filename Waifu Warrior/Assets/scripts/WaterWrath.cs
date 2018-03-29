@@ -8,7 +8,8 @@ public class WaterWrath : MonoBehaviour {
 
     void Start()
     {
-        FindObjectOfType<AudioManager>().Play("Wave");
+        FindObjectOfType<AudioManager>().Play("rain");
+        FindObjectOfType<AudioManager>().Play("bubble");
         player = GameObject.FindGameObjectWithTag("Player");
         StartCoroutine(DestroyObject());
 
@@ -30,7 +31,8 @@ public class WaterWrath : MonoBehaviour {
     IEnumerator DestroyObject()
     {
         yield return new WaitForSeconds(3);
-        //FindObjectOfType<AudioManager>().Stop("Fire");
+        FindObjectOfType<AudioManager>().Stop("rain");
+        FindObjectOfType<AudioManager>().Stop("bubble");
         Destroy(gameObject);
     }
 }

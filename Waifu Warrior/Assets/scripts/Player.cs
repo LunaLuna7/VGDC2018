@@ -20,21 +20,37 @@ public class Player : MonoBehaviour {
     public GameObject healthbar;
     Rigidbody2D rgbd;
     public SpriteRenderer image;
-    public Sprite camo;
+    
 
     public bool dragOn = true;
 
     public GameObject GameOver;
 
     private int CharacterSelected;
+
+    //Player attributes
+    private SpriteRenderer Shape;
+    private Animator anim;
+    private Transform trans;
+
+
+    //Camo sprite
+    public SpriteRenderer camo;
+    public SpriteRenderer defaultSprite;
+
+
     private void Start()
     {
+        trans = gameObject.GetComponent<Transform>();
+        Shape = gameObject.GetComponent<SpriteRenderer>();
+        anim = gameObject.GetComponent<Animator>();
+        
+        
+
         CharacterSelected = PlayerPrefs.GetInt("CharacterSelected");
-        Debug.Log(CharacterSelected);
-        Debug.Log(ID);
+        
         if(CharacterSelected != ID)
         {
-            Debug.Log("In if statement");
             this.gameObject.SetActive(false);
         }
         healthbar = GameObject.FindWithTag("Health");
@@ -42,9 +58,33 @@ public class Player : MonoBehaviour {
         image = gameObject.GetComponent<SpriteRenderer>();
     }
 
+    public void CamoShape()
+    {
+        Shape.sprite = camo.sprite;
+        anim.enabled = false;
+        trans.localScale = new Vector3(1.4f, 1.4f, 1.4f);
+        immune = true;
+    }
+
+    public void DefaultShape()
+    {
+        Shape.sprite = defaultSprite.sprite;
+        anim.enabled = true;
+        if (ID == 1)
+        {
+            trans.localScale = new Vector3(1f, 1f, 1f);
+        }
+        else
+        {
+            trans.localScale = new Vector3(0.46589f, 0.46589f, 0.46589f);
+        }
+        immune = false;
+    }
+
     void Update()
     {
-        if(rgbd.position.y > boundary.yMax || rgbd.position.y < boundary.yMin) { dragOn = false; }
+        
+        if (rgbd.position.y > boundary.yMax || rgbd.position.y < boundary.yMin) { dragOn = false; }
         else { dragOn = true; }
         
         rgbd.position = new Vector2
@@ -56,7 +96,7 @@ public class Player : MonoBehaviour {
 
     void OnMouseDrag()
     {
-        image.sprite = camo;
+        
         if (dragOn)
         {
             Vector2 mousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);

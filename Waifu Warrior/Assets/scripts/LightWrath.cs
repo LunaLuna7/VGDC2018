@@ -8,7 +8,8 @@ public class LightWrath : MonoBehaviour {
 
     void Start()
     {
-        FindObjectOfType<AudioManager>().Play("Wave");
+        FindObjectOfType<AudioManager>().Play("holy");
+        FindObjectOfType<AudioManager>().Play("sparklight");
         player = GameObject.FindGameObjectWithTag("Player");
         StartCoroutine(DestroyObject());
         
@@ -30,7 +31,8 @@ public class LightWrath : MonoBehaviour {
     IEnumerator DestroyObject()
     {
         yield return new WaitForSeconds(3);
-        //FindObjectOfType<AudioManager>().Stop("Fire");
+        FindObjectOfType<AudioManager>().Stop("holy");
+        FindObjectOfType<AudioManager>().Stop("sparklight");
         Destroy(gameObject);
     }
 }

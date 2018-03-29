@@ -2968,9 +2968,11 @@ MonoBehaviour:
   immune: 0
   healthbar: {fileID: 1913205085}
   image: {fileID: 0}
-  camo: {fileID: 21300000, guid: 8721698cb6d01eb4292cb3d2321c9a24, type: 3}
   dragOn: 0
   GameOver: {fileID: 1042047684}
+  camo: {fileID: 212695426916033438, guid: 70c1376137524d348a8ef739ca923f99, type: 2}
+  defaultSprite: {fileID: 212942313142131558, guid: 564c8ab6f85fb3c49bd91208ada1bba8,
+    type: 2}
 --- !u!70 &749793844
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -3134,9 +3136,11 @@ MonoBehaviour:
   immune: 0
   healthbar: {fileID: 1913205085}
   image: {fileID: 0}
-  camo: {fileID: 21300000, guid: 8721698cb6d01eb4292cb3d2321c9a24, type: 3}
   dragOn: 0
   GameOver: {fileID: 1042047684}
+  camo: {fileID: 212142499551274666, guid: d4c6197f2192c7f43bda476fe6732f72, type: 2}
+  defaultSprite: {fileID: 212561337031086400, guid: 96beb28dfebfbc44698d1c731cd346d2,
+    type: 2}
 --- !u!70 &780949773
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -5638,9 +5642,11 @@ MonoBehaviour:
   immune: 0
   healthbar: {fileID: 1913205085}
   image: {fileID: 0}
-  camo: {fileID: 21300000, guid: 8721698cb6d01eb4292cb3d2321c9a24, type: 3}
   dragOn: 0
   GameOver: {fileID: 1042047684}
+  camo: {fileID: 212887367291435618, guid: 8591346287a87e44792191ad457d3764, type: 2}
+  defaultSprite: {fileID: 212089006343262042, guid: a289bd9b751c7a242887ff89539cd54b,
+    type: 2}
 --- !u!70 &1314014495
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -7026,9 +7032,11 @@ MonoBehaviour:
   immune: 0
   healthbar: {fileID: 1913205085}
   image: {fileID: 0}
-  camo: {fileID: 21300000, guid: 8721698cb6d01eb4292cb3d2321c9a24, type: 3}
   dragOn: 0
   GameOver: {fileID: 1042047684}
+  camo: {fileID: 212177299628361568, guid: 8d6088e264f2a3c46b35a4a67d161148, type: 2}
+  defaultSprite: {fileID: 212431376744725660, guid: cb5dbcdea54c99c4f9a8c8d0deeaf83a,
+    type: 2}
 --- !u!70 &1862562580
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
