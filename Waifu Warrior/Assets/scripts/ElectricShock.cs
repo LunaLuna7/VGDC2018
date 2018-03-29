@@ -7,7 +7,7 @@ public class ElectricShock : MonoBehaviour {
     public GameObject player;
     
     void Start () {
-        FindObjectOfType<AudioManager>().Play("Wave");
+        FindObjectOfType<AudioManager>().Play("electricwave");
         player = GameObject.FindGameObjectWithTag("Player");
         StartCoroutine(DestroyObject());
         
@@ -28,7 +28,7 @@ public class ElectricShock : MonoBehaviour {
     IEnumerator DestroyObject()
     {
         yield return new WaitForSeconds(3);
-        //FindObjectOfType<AudioManager>().Stop("Fire");
+        FindObjectOfType<AudioManager>().Stop("electricwave");
         Destroy(gameObject);
     }
 }
