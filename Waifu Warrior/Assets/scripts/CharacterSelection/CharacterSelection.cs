@@ -52,7 +52,7 @@ public class CharacterSelection : MonoBehaviour {
     public void ConfirmButton()
     {
         PlayerPrefs.SetInt("CharacterSelected", index);
-        Debug.Log(PlayerPrefs.GetInt("CharacterSelected"));
+       
     }
     public void TriggerFire()
     {
