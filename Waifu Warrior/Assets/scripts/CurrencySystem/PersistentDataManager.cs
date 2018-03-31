@@ -7,7 +7,9 @@ using System;
 
 public static class PersistentDataManager {
 	public static int[] itemAmounts = new int[Data.itemEndIndex - Data.itemStartIndex];
-	public static PersistentData masterData = new PersistentData ();
+    public static Waifu selectedWaifu = Waifu.Nana; //Default waifu is Nana
+    public static bool[] waifusOwned = new bool[Data.waifuEndIndex - Data.waifuStartIndex];
+    public static int money;
 
 	static void CreateFile(){
 		if (!File.Exists(Application.persistentDataPath + "/PlayerData.txt"))
@@ -40,15 +42,25 @@ public static class PersistentDataManager {
 			reader.Close();
 
 			//Save data to variables.
+            //Load money
 			GameManager.gameManager.SetMoney(Convert.ToInt32(splitData[(int)Data.money]));
-			masterData.money = Convert.ToInt32(splitData[(int)Data.money]);
-			for(int i = (int)Data.itemStartIndex; i < (int)Data.itemEndIndex; i++){
-				itemAmounts[i - (int)Data.itemStartIndex] = Int32.Parse(splitData[i]);
-				masterData.itemList[i - (int)Data.itemStartIndex] = Int32.Parse(splitData[i]);
+			money = Convert.ToInt32(splitData[(int)Data.money]);
+
+            //Load items
+			for(int i = 0; i < (int)Data.itemEndIndex - (int)Data.itemStartIndex; i++){
+				itemAmounts[i] = Int32.Parse(splitData[i + (int)Data.itemStartIndex]);
 			}
 
-			Debug.Log("Master Data{\nMoney: " + masterData.money + "\nItems: " + masterData.itemList.Length + "\n}");
-		}
+            //Load waifus
+            selectedWaifu = (Waifu)Int32.Parse(splitData[(int)Data.selectedWaifuIndex]);
+            for (int i = 0; i < (int)Data.waifuEndIndex - (int)Data.waifuStartIndex; i++) {
+                waifusOwned[i] = splitData[i + (int)Data.waifuStartIndex].CompareTo("1")==0;
+                Debug.Log(splitData[i + (int)Data.waifuStartIndex]);
+            }
+
+            Debug.Log("Master Data:\nMoney=" + money + "\nItems:" + itemAmounts[0] + "," + itemAmounts[1] + "," + itemAmounts[2] + "," + itemAmounts[3] + "\nSelectedWaifu: " + selectedWaifu.ToString() + "\nWaifus:" + waifusOwned[0] + "," + waifusOwned[1] + "," + waifusOwned[2] + "," + waifusOwned[3]);
+
+        }
 		catch(Exception e){
 			Debug.Log ("Load failed. " + e);
 		}
@@ -105,47 +117,43 @@ public static class PersistentDataManager {
 		toReturn += GameManager.gameManager.GetMoney ().ToString ();
 
 		//Save items
-		//if (ItemShop.itemShop != null) {
-		//	for (int i = 0; i < ItemShop.itemShop.itemList.Count; i++) {
-		//		toReturn += ',' + (ItemShop.itemShop.itemList [i].bought ? "1" : "0");
-		//	}
-		//} else {
-		//	toReturn += GetItemData ();
-		//}
-		for (int i = 0; i < masterData.itemList.Length; i++) {
-			toReturn += ',' + masterData.itemList[i].ToString();
+		for (int i = 0; i < itemAmounts.Length; i++) {
+			toReturn += "," + itemAmounts[i].ToString();
 		}
-			
+
+        //Save waifus
+        toReturn += ',' + ((int)selectedWaifu).ToString();
+        for (int i = 0; i < waifusOwned.Length; i++) {
+            toReturn += "," + (waifusOwned[i]?'1':'0');
+        }
+        Debug.Log(toReturn);	
 		return toReturn;
 	}
 
 	public static void PurchaseItem(int index){
-		masterData.itemList [index]++;
-		Debug.Log ("Item purchased at index " + index + ". Current tally: " + masterData.itemList [index]);
+		itemAmounts [index]++;
+		Debug.Log ("Item purchased at index " + index + ". Current tally: " + itemAmounts [index]);
 		SaveData ();
 	}
 
 	public static void UseItem(int index){
-		masterData.itemList [index]--;
+		itemAmounts [index]--;
 		SaveData ();
 	}
 
 	public static void ChangeMoney(int value){
-		masterData.money += value;
+		money += value;
 		SaveData ();
 	}
-
-	public class PersistentData{
-		public int money = 0;
-		public int[] itemList = new int[(int)Data.itemEndIndex - (int)Data.itemStartIndex];
-	}
-
 }
 
 public enum Data{
 	money = 0,
 	itemStartIndex = 1,
 	itemEndIndex= 5,
+    selectedWaifuIndex = 5,
+    waifuStartIndex = 6,
+    waifuEndIndex = 10
 }
 
 public enum Item {
@@ -153,4 +161,11 @@ public enum Item {
     Clock = 1,
     Candy = 2,
     Gun = 3
+}
+
+public enum Waifu {
+    Nana = 0,
+    Emiko = 1,
+    Sakura = 2,
+    Sora = 3
 }
