@@ -9,7 +9,7 @@ public class MusicState : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        Debug.Log(PlayerPrefs.GetInt("MusicSound"));
+        //Debug.Log(PlayerPrefs.GetInt("MusicSound"));
 
 
 

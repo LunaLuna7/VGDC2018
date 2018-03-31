@@ -8,7 +8,6 @@ public class AudioState : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Debug.Log(PlayerPrefs.GetInt("AudioSound"));
         
 
 
