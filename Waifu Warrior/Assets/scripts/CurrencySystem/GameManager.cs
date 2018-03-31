@@ -29,14 +29,12 @@ public class GameManager : MonoBehaviour {
     public void AddMoney(int amount)
     {
         Money += amount;
-        PersistentDataManager.SaveData();
         UpdateUI();
     }
 
     public void SubtractMoney(int amount)
     {
         Money -= amount;
-        PersistentDataManager.SaveData();
         UpdateUI();
     }
 

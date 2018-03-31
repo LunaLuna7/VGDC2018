@@ -15,7 +15,7 @@ public class ItemCount : MonoBehaviour {
     void Start()
     {
 		PersistentDataManager.LoadData ();
-		amount = PersistentDataManager.GetItemAmount ((int)item); 
+		amount = PersistentDataManager.itemAmounts [(int)item]; 
         UpdateText();
         if(amount == 0)
         {

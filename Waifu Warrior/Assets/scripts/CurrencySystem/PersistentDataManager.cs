@@ -6,14 +6,11 @@ using System.Text;
 using System;
 
 public static class PersistentDataManager {
-    static Waifu selectedWaifu = Waifu.Nana; //Default waifu is Nana
-    static int money;
-    static int[] itemAmounts = new int[Data.itemEndIndex - Data.itemStartIndex];
-    static bool[] waifusOwned = new bool[Data.waifuEndIndex - Data.waifuStartIndex];
+    public static int[] itemAmounts = new int[Data.itemEndIndex - Data.itemStartIndex];
+    public static Waifu selectedWaifu = Waifu.Nana; //Default waifu is Nana
+    public static bool[] waifusOwned = new bool[Data.waifuEndIndex - Data.waifuStartIndex];
+    public static int money;
 
-    /// <summary>
-    /// Create an empty save file
-    /// </summary>
     static void CreateFile() {
         if (!File.Exists(Application.persistentDataPath + "/PlayerData.txt")) {
             StreamWriter sr = File.CreateText(Application.persistentDataPath + "/PlayerData.txt");
@@ -22,9 +19,6 @@ public static class PersistentDataManager {
         }
     }
 
-    /// <summary>
-    /// Write data to save file
-    /// </summary>
     public static void SaveData() {
         try {
             CreateFile();
@@ -38,9 +32,6 @@ public static class PersistentDataManager {
         }
     }
 
-    /// <summary>
-    /// Try to load data from save file
-    /// </summary>
     public static void LoadData() {
         try {
             CreateFile();
@@ -74,10 +65,48 @@ public static class PersistentDataManager {
         }
     }
 
-    /// <summary>
-    /// Get the string to write to save file
-    /// </summary>
-    /// <returns></returns>
+    public static void LoadItemData() {
+        CreateFile();
+        StreamReader reader = new StreamReader(Application.persistentDataPath + "/PlayerData.txt", Encoding.Default);
+        string rawData = reader.ReadLine();
+        string[] splitData = rawData.Split(',');
+        reader.Close();
+
+        for (int i = (int)Data.itemStartIndex; i < (int)Data.itemEndIndex; i++) {
+            if (i < ItemShop.itemShop.itemList.Count) {
+                ItemShop.itemShop.itemList[i - (int)Data.itemStartIndex].bought = splitData[i] == "0" ? false : true;
+            }
+        }
+    }
+
+    public static string GetItemData() {
+        CreateFile();
+        StreamReader reader = new StreamReader(Application.persistentDataPath + "/PlayerData.txt", Encoding.Default);
+        string rawData = reader.ReadLine();
+        string[] splitData = rawData.Split(',');
+        reader.Close();
+
+        string toReturn = "";
+        for (int i = (int)Data.itemStartIndex; i < (int)Data.itemEndIndex; i++) {
+            toReturn += ',' + splitData[i];
+        }
+        return toReturn;
+    }
+
+    public static int[] GetItemAmounts() {
+        CreateFile();
+        StreamReader reader = new StreamReader(Application.persistentDataPath + "/PlayerData.txt", Encoding.Default);
+        string rawData = reader.ReadLine();
+        string[] splitData = rawData.Split(',');
+        reader.Close();
+        int[] toReturn = new int[(int)Data.itemEndIndex - (int)Data.itemStartIndex];
+
+        for (int i = (int)Data.itemStartIndex; i < (int)Data.itemEndIndex; i++) {
+            toReturn[i - (int)Data.itemStartIndex] = Int32.Parse(splitData[i]);
+        }
+        return toReturn;
+    }
+
     public static string GetData() {
         //See enum Data for item ordering
 
@@ -100,71 +129,23 @@ public static class PersistentDataManager {
         return toReturn;
     }
 
-    /// <summary>
-    /// Purchase an item and save data
-    /// </summary>
-    /// <param name="index"></param>
     public static void PurchaseItem(int index) {
         itemAmounts[index]++;
+        Debug.Log("Item purchased at index " + index + ". Current tally: " + itemAmounts[index]);
         SaveData();
     }
 
-    /// <summary>
-    /// Decrement item count and save data
-    /// </summary>
-    /// <param name="index"></param>
     public static void UseItem(int index) {
         itemAmounts[index]--;
         SaveData();
     }
 
-    /// <summary>
-    /// Modify money amount and save data
-    /// </summary>
-    /// <param name="value"></param>
     public static void ChangeMoney(int value) {
         money += value;
         SaveData();
     }
-
-    /// <summary>
-    /// Mark a waifu as "owned" and save data
-    /// </summary>
-    /// <param name="w"></param>
-    public static void BuyWaifu(Waifu w) {
-        waifusOwned[(int)w] = true;
-        SaveData();
-    }
-
-    public static bool IsWaifuOwned(Waifu w) {
-        return waifusOwned[(int)w];
-    }
-
-    /// <summary>
-    /// Get the number of items
-    /// </summary>
-    /// <param name="i"></param>
-    /// <returns></returns>
-    public static int GetItemAmount(Item i) {
-        return GetItemAmount((int)i);
-    }
-    public static int GetItemAmount(int n) {
-        return itemAmounts[n];
-    }
-
-    /// <summary>
-    /// Change the selected waifu and save data
-    /// </summary>
-    /// <param name="w"></param>
-    public static void ChangeSelectedWaifu(Waifu w) {
-        selectedWaifu = w;
-        SaveData();
-    }
 }
 
-/// <summary>
-/// Holds relevant information for where to find specific pieces of data in the save file
-/// </summary>
 public enum Data {
     money = 0,
     itemStartIndex = 1,
@@ -174,9 +155,6 @@ public enum Data {
     waifuEndIndex = 10
 }
 
-/// <summary>
-/// In-game item indices
-/// </summary>
 public enum Item {
     Whistle = 0,
     Clock = 1,
@@ -184,9 +162,6 @@ public enum Item {
     Gun = 3
 }
 
-/// <summary>
-/// Waifu indices
-/// </summary>
 public enum Waifu {
     Nana = 0,
     Emiko = 1,
