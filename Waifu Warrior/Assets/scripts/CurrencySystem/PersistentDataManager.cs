@@ -160,6 +160,10 @@ public static class PersistentDataManager {
         selectedWaifu = w;
         SaveData();
     }
+
+    public static Waifu GetSelectedWaifu() {
+        return selectedWaifu;
+    }
 }
 
 /// <summary>
