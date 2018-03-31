@@ -36,7 +36,7 @@ public class ItemShop : MonoBehaviour {
             holderScript.itemName.text = itemList[i].ItemName;
             holderScript.itemPrice.text = itemList[i].ItemPrice.ToString();
             holderScript.itemID = itemList[i].ItemID;
-			holderScript.amount.text = PersistentDataManager.masterData.itemList [i].ToString ();
+			holderScript.amount.text = PersistentDataManager.GetItemAmount(i).ToString ();
 
             if (holderScript.amount.text == "0")
             {
@@ -79,7 +79,7 @@ public class ItemShop : MonoBehaviour {
             ItemHolderList.Add(holder);
             buyButtonList.Add(holderScript.buyButton); //keeps track of whihc button.
 
-			itemList [i].bought = PersistentDataManager.masterData.itemList [i]>0?true:false;
+			itemList [i].bought = PersistentDataManager.GetItemAmount(i)>0?true:false;
 			if (itemList[i].bought == true)
             {                                                               //v----the sub directory.
                 holderScript.itemImage.sprite = Resources.Load<Sprite>("Sprites/" + itemList[i].SpriteName); //Goes to the Resources directory to grab the right sprites.
@@ -103,7 +103,7 @@ public class ItemShop : MonoBehaviour {
 				{
 					if (itemList[j].ItemID == currentItemID)
 					{
-						holderScript.amount.text = PersistentDataManager.masterData.itemList [currentItemID - 1].ToString();
+						holderScript.amount.text = PersistentDataManager.GetItemAmount(currentItemID - 1).ToString();
                         if (holderScript.amount.text == "0")
                         {
                             holderScript.bar1.SetActive(false);
