@@ -21,7 +21,7 @@ public class BuyButton : MonoBehaviour {
 
         for (int i = 0; i < ItemShop.itemShop.itemList.Count; i++)
         {
-			if (ItemShop.itemShop.itemList[i].ItemID == itemID /*&& !ItemShop.itemShop.itemList[i].bought*/ && GameManager.gameManager.CheckMoney(ItemShop.itemShop.itemList[i].ItemPrice) && PersistentDataManager.masterData.itemList[i] < 5)
+			if (ItemShop.itemShop.itemList[i].ItemID == itemID /*&& !ItemShop.itemShop.itemList[i].bought*/ && GameManager.gameManager.CheckMoney(ItemShop.itemShop.itemList[i].ItemPrice) && PersistentDataManager.GetItemAmount(i) < 5)
             {
                 //We can buy item if hasnt been bought, have enough $$, and has same ID in the list.
 
