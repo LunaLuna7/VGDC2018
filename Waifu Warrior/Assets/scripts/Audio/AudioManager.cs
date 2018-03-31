@@ -32,9 +32,15 @@ public class AudioManager : MonoBehaviour {
 
     void Start()
     {
-       
-        //Play("test");
-        
+        if (PlayerPrefs.GetInt("AudioSound") == 1)
+        {
+            MuiscOn();
+        }
+        if (PlayerPrefs.GetInt("AudioSound") == 0)
+        {
+            MusicOff();
+        }
+
     }
 
     public void Play(string name)
@@ -60,6 +66,7 @@ public class AudioManager : MonoBehaviour {
         {
             s.volume = .225f;
             s.source.volume = s.volume;
+            PlayerPrefs.SetInt("AudioSound", 1);
         }
     }
 
@@ -70,6 +77,7 @@ public class AudioManager : MonoBehaviour {
         {
             s.volume = 0f;
             s.source.volume = s.volume;
+            PlayerPrefs.SetInt("AudioSound", 0);
         }
     }
     

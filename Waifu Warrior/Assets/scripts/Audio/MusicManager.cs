@@ -35,7 +35,14 @@ public class MusicManager : MonoBehaviour {
 
     void Start()
     {
-    
+        if (PlayerPrefs.GetInt("MusicSound") == 1)
+        {
+            MuiscOn();
+        }
+        if (PlayerPrefs.GetInt("MusicSound") == 0)
+        {
+            MusicOff();
+        }
     }
 
     public void Play(string name)
@@ -61,6 +68,7 @@ public class MusicManager : MonoBehaviour {
         {
             s.volume = .200f;
             s.source.volume = s.volume;
+            PlayerPrefs.SetInt("MusicSound", 1);
         }
     }
 
@@ -71,6 +79,7 @@ public class MusicManager : MonoBehaviour {
         {
             s.volume = 0f;
             s.source.volume = s.volume;
+            PlayerPrefs.SetInt("MusicSound", 0);
         }
     }
 }
