@@ -6,7 +6,6 @@ using TMPro;
 public class CharacterSelection : MonoBehaviour {
 
     private GameObject[] characterList;
-    public GameObject FireWorks;
 
     private int index;
 
@@ -52,10 +51,6 @@ public class CharacterSelection : MonoBehaviour {
     public void ConfirmButton()
     {
         PlayerPrefs.SetInt("CharacterSelected", index);
-       
-    }
-    public void TriggerFire()
-    {
-        Instantiate(FireWorks, transform.position, transform.rotation);
+        Debug.Log(PlayerPrefs.GetInt("CharacterSelected"));
     }
 }

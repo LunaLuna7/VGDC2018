@@ -13,11 +13,5 @@ public class ItemHolder : MonoBehaviour {
     public Image itemImage;
     public GameObject buyButton;
 	public TMP_Text amount;
-
-    public GameObject bar1;
-    public GameObject bar2;
-    public GameObject bar3;
-    public GameObject bar4;
-    public GameObject bar5;
-
+	
 }

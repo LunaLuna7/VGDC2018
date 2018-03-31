@@ -21,7 +21,6 @@ public class Coin : MonoBehaviour {
 
     void OnTouch()
     {
-        FindObjectOfType<AudioManager>().Play("coin");
         Bank.IncrementCoin();
         GameManager.gameManager.AddMoney(1);
         Destroy(gameObject);

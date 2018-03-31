@@ -47,7 +47,7 @@ public class EnemyAI : MonoBehaviour {
         Instantiate(hit, transform.position, transform.rotation);
         if (health <= 0)
         {
-            WrathManager.fillAmountWrath += 1f; //.02f
+            WrathManager.fillAmountWrath += .02f;
             Destroy(gameObject);
         }
     }    
