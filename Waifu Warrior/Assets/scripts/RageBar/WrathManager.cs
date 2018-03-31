@@ -4,14 +4,23 @@ using UnityEngine;
 
 static class WrathManager{
 
-    public static double fillAmountWrath; //The fillamount
-
+    public static float fillAmountWrath; //The fillamount
 
 
     public static void EmptyWrath()
     {
-        fillAmountWrath = 0;
+        fillAmountWrath = 0f;
+    }
 
+    public static bool FullWrath()
+    {
+        if(fillAmountWrath >= 1) // == max fillAmount
+        {
+
+            
+            return true;
+        }
+        return false;
     }
 
 }

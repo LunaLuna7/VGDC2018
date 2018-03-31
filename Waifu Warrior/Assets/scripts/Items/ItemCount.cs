@@ -10,23 +10,28 @@ public class ItemCount : MonoBehaviour {
     public Button item_button;
 
     private int amount;
-	[SerializeField] int index;
+	[SerializeField] Item item;
 
     void Start()
     {
 		PersistentDataManager.LoadData ();
-		amount = PersistentDataManager.masterData.itemList [index];
+		amount = PersistentDataManager.GetItemAmount((int)item); 
         UpdateText();
+        if(amount == 0)
+        {
+            item_button.interactable = false;
+        }
     }
 
     public void decrement()
     {
-        if(amount == 1)
+        amount -= 1;
+        PersistentDataManager.UseItem((int)item);
+        UpdateText();
+        if (amount == 0) //amount <= -4
         {
             item_button.interactable = false;
         }
-        amount = amount - 1;
-        UpdateText();
     }
 
     public void SetValue(int value)

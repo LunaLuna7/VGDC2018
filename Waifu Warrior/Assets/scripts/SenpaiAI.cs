@@ -50,7 +50,7 @@ public class SenpaiAI : MonoBehaviour {
 
     void OnMouseDown()
     {
-
+        FindObjectOfType<AudioManager>().Play("Tap");
         health = health - 1;
         Instantiate(hit, transform.position, transform.rotation);
         if (health <= 0)
@@ -64,16 +64,20 @@ public class SenpaiAI : MonoBehaviour {
         rgbd.MovePosition(Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime));
     }
 
+    
+
     IEnumerator DistanceAttack()
     {
         int num_lasers = 10;
         
         for (int i = 0; i < num_lasers; i++)
         {
-            speed = 0;
-            Instantiate(laser, this.transform.position, target.rotation);
-            yield return new WaitForSeconds(3);
+            
             speed = temp;
+            yield return new WaitForSeconds(1);
+            speed = 0;
+            yield return new WaitForSeconds(1);
+            Instantiate(laser, this.transform.position, target.rotation);
             yield return new WaitForSeconds(3);
          
         }

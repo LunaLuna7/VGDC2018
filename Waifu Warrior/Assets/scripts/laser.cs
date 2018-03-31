@@ -2,47 +2,39 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class laser : MonoBehaviour {
-
-
-    public Transform Projectile;
+public class laser : MonoBehaviour
+{
     public Transform target;
     public float speed;
-    public int health;
     Rigidbody2D rgbd;
 
-    // Use this for initialization
-    void Awake()
-    {
-        rgbd = gameObject.GetComponent<Rigidbody2D>();
-        //target = GameObject.FindGameObjectWithTag("Player").transform;
-    }
     void Start()
     {
-        Projectile.rotation = Quaternion.LookRotation(target.position - Projectile.position);
-        rgbd.velocity = transform.forward * speed;
-        
-        
+        rgbd = gameObject.GetComponent<Rigidbody2D>();
+        target = GameObject.FindGameObjectWithTag("Player").transform;
+
+        transform.right = target.position - transform.position;
+        rgbd.velocity = transform.right * speed;
+        StartCoroutine(DestroyObject());
+
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
        
-    }
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        //Move();
-
-    }
-
-    void Update()
-    {
-
-    }
-
-
-    void Move()
-    {
+       
+        Destroy(gameObject);
         
-        //transform.position = Vector3.MoveTowards( transform.position, target.transform.position,speed * Time.deltaTime);
-        //rgbd.MovePosition(Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime));
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!collision.gameObject.CompareTag("Gold"))
+        {
+            Destroy(gameObject);
+        }
+    }
+    IEnumerator DestroyObject()
+    {
+        yield return new WaitForSeconds(7);
+        Destroy(gameObject);
     }
 }

@@ -3,14 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BarScript : MonoBehaviour {
 
+public class BarScript : MonoBehaviour {
+    [SerializeField] private Button RageBar;
     [SerializeField]//to make fillamount public but can only be access by inspector
     private float fillAmount;
     [SerializeField]//temporary
     private Image content;
+    
+    private bool singleRun = true;
 
     public float MaxValue{get; set;}
+
+    private Animator wrathFace;
+
+    public int player;
+    public GameObject WrathRing;
+    public GameObject ElectricShock;
+    public GameObject WaterWave;
+    public GameObject LightWave;
 
     public float Value
     {
@@ -21,16 +32,25 @@ public class BarScript : MonoBehaviour {
     }
 	// Use this for initialization
 	void Start () {
-        //Value = 0;
+
+        player = PlayerPrefs.GetInt("CharacterSelected");
+        wrathFace = gameObject.GetComponent<Animator>();
+        WrathManager.EmptyWrath();
 	}
 	
 	// Update is called once per frame
-	void Update () {
-        //Value = 0;
-        HandleBar();
+	void Update ()
+    {
+        CheckRage();
+        HandleBar();    
 	}
+
     private void HandleBar()
     {
+        if(WrathManager.fillAmountWrath != fillAmount)
+        {
+            fillAmount = WrathManager.fillAmountWrath;
+        }
         if(fillAmount!= content.fillAmount)
         {
             content.fillAmount = fillAmount;
@@ -49,4 +69,55 @@ public class BarScript : MonoBehaviour {
         // 78*1 / 230 = 0.339
 
     }
-}
+
+    public void CheckRage()
+    {
+        
+        if (WrathManager.FullWrath() && singleRun == true)
+        {
+            singleRun = false;
+            FindObjectOfType<AudioManager>().Play("ChargedWrath");
+            activateButton();
+            
+        }
+    }
+
+    public void activateButton()
+    {
+        RageBar.interactable = true;
+        wrathFace.SetBool("Wrath", true);
+        
+
+    }
+
+    public void useWrath()
+    {
+        singleRun = true;
+
+        if (player == 0)
+        {
+            Instantiate(WrathRing);
+        }
+        if (player == 1)
+        {
+            Instantiate(ElectricShock);
+        }
+        if (player == 2)
+        {
+            Instantiate(WaterWave);
+        }
+        if (player == 3)
+        {
+            Instantiate(LightWave);
+        }
+
+
+        WrathManager.EmptyWrath();
+        RageBar.interactable = false;
+        wrathFace.SetBool("Wrath", false);
+    }
+
+    
+ }
+
+

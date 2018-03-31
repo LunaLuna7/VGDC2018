@@ -15,6 +15,9 @@ public class ItemShop : MonoBehaviour {
     public GameObject ItemHolderPrefab; //Where the Item holder object goes
     public Transform grid;
 
+
+
+
     void Start()
     {
         itemShop = this; //Makes self/this be the static instance at start of game. 
@@ -33,8 +36,42 @@ public class ItemShop : MonoBehaviour {
             holderScript.itemName.text = itemList[i].ItemName;
             holderScript.itemPrice.text = itemList[i].ItemPrice.ToString();
             holderScript.itemID = itemList[i].ItemID;
-			holderScript.amount.text = PersistentDataManager.masterData.itemList [i].ToString ();
+			holderScript.amount.text = PersistentDataManager.GetItemAmount(i).ToString ();
 
+            if (holderScript.amount.text == "0")
+            {
+                holderScript.amount.text = "";
+                holderScript.bar1.SetActive(false);
+                holderScript.bar2.SetActive(false);
+                holderScript.bar3.SetActive(false);
+                holderScript.bar4.SetActive(false);
+                holderScript.bar5.SetActive(false);
+            }
+            if (holderScript.amount.text == "1")
+            {
+                holderScript.bar1.SetActive(true);
+            }
+            if (holderScript.amount.text == "2")
+            {
+                holderScript.bar1.SetActive(false);
+                holderScript.bar2.SetActive(true);
+            }
+            if (holderScript.amount.text == "3")
+            {
+                holderScript.bar2.SetActive(false);
+                holderScript.bar3.SetActive(true);
+            }
+            if (holderScript.amount.text == "4")
+            {
+
+                holderScript.bar3.SetActive(false);
+                holderScript.bar4.SetActive(true);
+            }
+            if (holderScript.amount.text == "5")
+            {
+                holderScript.bar4.SetActive(false);
+                holderScript.bar5.SetActive(true);
+            }
             //the buy button
             holderScript.buyButton.GetComponent<BuyButton>().itemID = itemList[i].ItemID;
 
@@ -42,7 +79,7 @@ public class ItemShop : MonoBehaviour {
             ItemHolderList.Add(holder);
             buyButtonList.Add(holderScript.buyButton); //keeps track of whihc button.
 
-			itemList [i].bought = PersistentDataManager.masterData.itemList [i]>0?true:false;
+			itemList [i].bought = PersistentDataManager.GetItemAmount(i)>0?true:false;
 			if (itemList[i].bought == true)
             {                                                               //v----the sub directory.
                 holderScript.itemImage.sprite = Resources.Load<Sprite>("Sprites/" + itemList[i].SpriteName); //Goes to the Resources directory to grab the right sprites.
@@ -66,8 +103,41 @@ public class ItemShop : MonoBehaviour {
 				{
 					if (itemList[j].ItemID == currentItemID)
 					{
-						holderScript.amount.text = PersistentDataManager.masterData.itemList [currentItemID - 1].ToString();
-					}
+						holderScript.amount.text = PersistentDataManager.GetItemAmount(currentItemID - 1).ToString();
+                        if (holderScript.amount.text == "0")
+                        {
+                            holderScript.bar1.SetActive(false);
+                            holderScript.bar2.SetActive(false);
+                            holderScript.bar3.SetActive(false);
+                            holderScript.bar4.SetActive(false);
+                            holderScript.bar5.SetActive(false);
+                        }
+                        if (holderScript.amount.text == "1")
+                        {
+                            holderScript.bar1.SetActive(true);
+                        }
+                        if (holderScript.amount.text == "2")
+                        {
+                            holderScript.bar1.SetActive(false);
+                            holderScript.bar2.SetActive(true);
+                        }
+                        if (holderScript.amount.text == "3")
+                        {
+                            holderScript.bar2.SetActive(false);
+                            holderScript.bar3.SetActive(true);
+                        }
+                        if (holderScript.amount.text == "4")
+                        {
+                            
+                            holderScript.bar3.SetActive(false);
+                            holderScript.bar4.SetActive(true);
+                        }
+                        if (holderScript.amount.text == "5")
+                        {
+                            holderScript.bar4.SetActive(false);
+                            holderScript.bar5.SetActive(true);
+                        }
+                    }
 				}
 			}
 
